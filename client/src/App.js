@@ -10,7 +10,7 @@ function App() {
   return (
    <Router>
      <Route path="/" component={frontPage} exact />
-     <Route path="bottleInfo" component={bottleInfo} />
+     <Route path="/bottleInfo" component={bottleInfo} />
    </Router>
   );
 }

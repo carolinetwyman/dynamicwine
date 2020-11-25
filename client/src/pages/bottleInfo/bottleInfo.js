@@ -4,7 +4,10 @@ import Map from "../../components/map/map";
 
 function bottleInfo() {
    return (
+     <div>
     <Map/>
+    <h1>Bottle Info Page!</h1>
+    </div>
    );
  }
  

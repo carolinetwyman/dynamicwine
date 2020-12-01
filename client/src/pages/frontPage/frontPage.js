@@ -9,6 +9,7 @@ import { Button, Container, Row, Col } from 'reactstrap';
 
 function frontPage() {
   return (
+
     <div className="wine">
       <Row>
         <Col sm={{ size: 'auto', offset: 1 }}>
@@ -16,6 +17,7 @@ function frontPage() {
           <Map className='center'/>
       </Col>
       </Row>
+
     </div>
   );
 }

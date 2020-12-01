@@ -1,6 +1,9 @@
 {
 	"name": "client",
 	"version": "0.1.0",
+	"engines": {
+		"node": "12.x"
+	},
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.6",
@@ -15,6 +18,7 @@
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.0",
 		"reactstrap": "^8.7.1",
+		"seed": "^0.4.4",
 		"web-vitals": "^0.2.4",
 		"yup": "^0.31.0"
 	},
@@ -22,7 +26,8 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"seed": "node src/db/seedWines.js"
 	},
 	"eslintConfig": {
 		"extends": [

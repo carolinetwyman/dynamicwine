@@ -1,0 +1,22 @@
+.wine {
+   /* background-image: url(wine-cellar-2430651_1920.jpg); */
+   color: white;
+   /* height: 3em; */
+   margin: 0em;
+   
+}
+
+.center {
+   display: flex
+}
+
+.screen { 
+   width: 100% !important;
+   height: 100% !important;
+}
+
+.body { 
+   background-image: url(../frontPage/wine-cellar.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}

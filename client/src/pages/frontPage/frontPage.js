@@ -8,7 +8,7 @@ import Login from '../../components/login/Login';
 function frontPage() {
   return (
     <div>
-      <Login />,
+      <Login />
       <Map />
     </div>
   );

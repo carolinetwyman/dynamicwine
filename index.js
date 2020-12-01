@@ -5,12 +5,12 @@ const mongoose = require("mongoose");
 
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-//const User = require("../dynamicwine/client/src/models/users/userModel.js");
-//const Wine = require("./client/src/models/wines/wineModel.js");
+//Var User = require("../dynamicwine/client/src/models/users/userModel.js");
+//Var Wine = require("./client/src/models/wines/wineModel.js");
 const app = express();
 
 app.use([
-    express.urlencoded({ extended: true }),
+    express.urlencoded({ extended: false }),
     express.json()
 ]);
 
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/dynamicwine',
+  process.env.MONGODB_URI || 'mongodb://localhost/dynamicwine', { useNewUrlParser: true, useUnifiedTopology: true });
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

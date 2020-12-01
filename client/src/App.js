@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import frontPage from './pages/frontPage/frontPage.js';
 import bottleInfo from './pages/bottleInfo/bottleInfo.js';
 // import reactstrap from "reactstrap";
-// import bootstrap from "bootstrap";
+
 
 function App() {
   return (

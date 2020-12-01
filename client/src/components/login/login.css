@@ -8,3 +8,13 @@
     color: red;
 }
 
+.button {
+  margin-bottom: 3.5em;
+  margin-left: .5em;
+}
+
+.input-row {
+  margin-top: 1.5em;
+  margin-left: .5em;
+}
+

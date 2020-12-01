@@ -3,6 +3,7 @@ import "./login.css";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Error from './Error';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Button, Container, Row, Col } from 'reactstrap';
 import Reactstrap from 'reactstrap';
 
@@ -48,7 +49,7 @@ export default function Login() {
                     <Row>
                         <Col  sm={{ size: 'auto', offset: 1 }}>
                         <div className='input-row'>
-                            <label htmlFor='email'>Email</label>
+                            <label htmlFor='email'>
                             <input
                                 type='email'
                                 name='email'
@@ -60,11 +61,25 @@ export default function Login() {
                                 className={touched.email && errors.email ? 'has-error'
                                 : null}
                             />
-                            <Error touched={touched.email} message={errors.email} />
+                            <Error touched={touched.email} message={errors.email} /></label>
+                            <label htmlFor='password'>
+                        <input
+                            type='text'
+                            name='password'
+                            id='password'
+                            placeholder='Enter your password'
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.password}
+                            className={touched.password && errors.password ?
+                                'has-error' : null}
+                        />
+                        <Error touched={touched.password} message={errors.password} /></label>
+                        <Button className="button" color="primary" type='submit' disabled={isSubmitting}>Submit</Button>{' '}
                         </div>
                         </Col>
                     </Row>
-
+{/* 
                     <div className='input-row'>
                         <label htmlFor='password'>Password</label>
                         <input
@@ -85,7 +100,7 @@ export default function Login() {
                         <Jumbotron>
                         <Button color="primary" type='submit' disabled={isSubmitting}>Submit</Button>{' '}
                         </Jumbotron>
-                    </div>
+                    </div> */}
 
                 </form>
                 

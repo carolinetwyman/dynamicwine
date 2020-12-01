@@ -3,11 +3,6 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
-
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 //const User = require("../dynamicwine/client/src/models/users/userModel.js");
@@ -26,7 +21,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/dynamicwine",
+  process.env.MONGODB_URI || 'mongodb://localhost/dynamicwine',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
 );
 
 // app.post("/submit", ({ body }, res) => {

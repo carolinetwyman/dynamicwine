@@ -4,7 +4,7 @@
 	"engines": {
 		"node": "12.x"
 	},
-	"private": true,
+	"private": false,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.6",
 		"@testing-library/react": "^11.2.1",
@@ -22,7 +22,7 @@
 		"reactstrap": "^8.7.1",
 		"seed": "^0.4.4",
 		"web-vitals": "^0.2.4",
-    "axios": "^0.21.0",
+		"axios": "^0.21.0",
 		"yup": "^0.31.0"
 	},
 	"scripts": {
@@ -49,6 +49,5 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	},
-	"proxy": "http://localhost:3001"
+	}
 }

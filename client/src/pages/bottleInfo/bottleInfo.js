@@ -4,6 +4,7 @@ import Map from "../../components/map/map";
 import Login from '../../components/login/login';
 import Filters from '../../components/filters/filters';
 import List from '../../components/list/list';
+import Information from '../../components/information/information';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
 import "./bottleInfo.css";
@@ -22,7 +23,7 @@ function bottleInfo() {
             <Map/>
           </Jumbotron>
         </Col>
-        <Col lg={8}>
+        <Col lg={4}>
           <Row>
             <Jumbotron fluid>
               <Filters/>
@@ -33,6 +34,11 @@ function bottleInfo() {
               <List/>
             </Jumbotron>
           </Row>
+        </Col>
+        <Col lg={4}>
+          <Jumbotron fluid>
+            <Information/>
+          </Jumbotron>
         </Col>
       </Row>
       </Jumbotron>

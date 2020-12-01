@@ -13,30 +13,32 @@ import "./frontPage.css";
 
 function frontPage() {
   return (
-    <Jumbotron fluid className="body">
-      <Row className="wine">
+    <div className="body">
+    <Row className="wine">
           <Login className='center'/>
-      </Row>
+    </Row>
+    <Jumbotron fluid className="main">
       <Row>
         <Col lg={8}>
-          <Jumbotron fluid>
+          <Jumbotron fluid className="components">
             <Map/>
           </Jumbotron>
         </Col>
         <Col lg={4}>
           <Row>
-            <Jumbotron fluid>
+            <Jumbotron fluid className="components">
               <Filters/>
             </Jumbotron>
           </Row>
           <Row>
-            <Jumbotron fluid>
+            <Jumbotron fluid className="components">
               <List/>
             </Jumbotron>
           </Row>
         </Col>
       </Row>
       </Jumbotron>
+      </div>
  
   );
 }

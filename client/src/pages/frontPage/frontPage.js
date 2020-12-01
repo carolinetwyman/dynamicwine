@@ -1,7 +1,7 @@
 import React from "react";
 import "./frontPage.css";
 import Map from "../../components/map/map";
-import Login from '../../components/login/Login';
+import Login from '../../components/login/login';
 import { Button, Container, Row, Col } from 'reactstrap';
 
 

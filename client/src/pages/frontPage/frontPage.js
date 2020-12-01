@@ -4,6 +4,7 @@ import "./frontPage.css";
 import Map from "../../components/map/map";
 import Login from "../../components/login/login";
 import CategoryChoice from "../../components/wine-categories/category-choice";
+import { Button, Container, Row, Col } from 'reactstrap';
 
 
 class frontPage extends Component {
@@ -25,11 +26,18 @@ class frontPage extends Component {
 
   render(){
     return (
-      <div>
-        <Login />,
-        <Map />
-        <CategoryChoice getChoices={this.getChoices} />
-        { this.state.categories ? <p>Wine info based off your selection: {this.state.categories}</p> : <p>Please select a category</p>}
+      <div className="wine">
+      <Row>
+        <Col sm={{ size: 'auto', offset: 1 }}>
+          <Login className='center'/>,
+          <Map className='center'/>
+        </Col>
+        <Col sm={{ size: 'auto', offset: 1 }}>
+          <CategoryChoice getChoices={this.getChoices} />
+          { this.state.categories ? <p>Wine info based off your selection: {this.state.categories}</p> : <p>Please select a category</p>}
+        </Col>
+      </Row>
+        
       </div>
     );
   }

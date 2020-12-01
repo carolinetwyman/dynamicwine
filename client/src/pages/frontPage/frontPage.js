@@ -6,7 +6,7 @@ import Login from "../../components/login/login";
 function frontPage() {
   return (
     <div>
-      <Login />,
+      <Login />
       <Map />
     </div>
   );

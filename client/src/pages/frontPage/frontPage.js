@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Map from "../../components/map/map";
 import Login from '../../components/login/login';
 import Filters from '../../components/filters/filters';
@@ -8,7 +8,7 @@ import List from '../../components/list/list';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
 import "./frontPage.css";
-import CategoryChoice from "../../components/wine-categories/category-choice";
+// import CategoryChoice from "../../components/wine-categories/category-choice";
 
 
 function frontPage() {

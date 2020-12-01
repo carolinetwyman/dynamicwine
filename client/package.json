@@ -4,11 +4,12 @@
 	"engines": {
 		"node": "12.x"
 	},
-	"private": true,
+	"private": false,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.6",
 		"@testing-library/react": "^11.2.1",
 		"@testing-library/user-event": "^12.2.2",
+		"axios": "^0.21.0",
 		"bootstrap": "^4.5.3",
 		"formik": "^2.2.5",
 		"mongoose": "^5.10.18",
@@ -22,7 +23,6 @@
 		"reactstrap": "^8.7.1",
 		"seed": "^0.4.4",
 		"web-vitals": "^0.2.4",
-    "axios": "^0.21.0",
 		"yup": "^0.31.0"
 	},
 	"scripts": {

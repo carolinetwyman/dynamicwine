@@ -5,6 +5,7 @@
 		"node": "12.x"
 	},
 	"private": false,
+	"proxy": "http://localhost:3001",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.6",
 		"@testing-library/react": "^11.2.1",
@@ -49,6 +50,5 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	},
-	"proxy": "http://localhost:3001"
+	}
 }

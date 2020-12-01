@@ -1,6 +1,6 @@
 import React from 'react';
 import "./login.css";
-import { Formik } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import Error from './Error';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -45,9 +45,9 @@ export default function Login() {
                 isSubmitting 
             }) => (
                 <Container className="wine">
-                <form onSubmit={handleSubmit}>
-                    <Row>
-                        <Col  sm={{ size: 'auto', offset: 1 }}>
+                <Form onSubmit={handleSubmit}>
+                    <Row> 
+                        {/* <Col  sm={{ size: 'auto', offset: 1 }}> */}
                         <div className='input-row'>
                             <label htmlFor='email'>
                             <input
@@ -75,9 +75,9 @@ export default function Login() {
                                 'has-error' : null}
                         />
                         <Error touched={touched.password} message={errors.password} /></label>
-                        <Button className="button" color="primary" type='submit' disabled={isSubmitting}>Submit</Button>{' '}
+                        <Button className="button" color="primary" type='submit' disabled={isSubmitting}>Sign In</Button>{' '}
                         </div>
-                        </Col>
+                        {/* </Col> */}
                     </Row>
 {/* 
                     <div className='input-row'>
@@ -102,7 +102,7 @@ export default function Login() {
                         </Jumbotron>
                     </div> */}
 
-                </form>
+                </Form>
                 
                 </Container>
             )}

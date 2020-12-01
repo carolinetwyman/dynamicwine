@@ -1,0 +1,9 @@
+.wine {
+    background-image: url(wine-cellar-2430651_1920.jpg);
+    color: rgb(218, 144, 26);
+    
+}
+
+.center {
+    display: flex
+}

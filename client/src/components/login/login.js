@@ -3,6 +3,8 @@ import "./login.css";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Error from './Error';
+import { Jumbotron, Button, Container, Row, Col } from 'reactstrap';
+import Reactstrap from 'reactstrap';
 
 
 const validationSchema = Yup.object().shape({
@@ -13,7 +15,7 @@ const validationSchema = Yup.object().shape({
         .required("Must enter an email"),
     password: Yup.string()
         .min(1, "Must have a character")
-        .max(25, "Must be shorter than 255")
+        .max(25, "Must be shorter than 25")
         .required("Must enter a password"),
 });
 
@@ -41,23 +43,27 @@ export default function Login() {
                 handleSubmit, 
                 isSubmitting 
             }) => (
+                <Container className="wine">
                 <form onSubmit={handleSubmit}>
-                    <h1> NEW CODE </h1>
-                    <div className='input-row'>
-                        <label htmlFor='email'>Email</label>
-                        <input
-                            type='email'
-                            name='email'
-                            id='email'
-                            placeholder='Enter your email'
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.email}
-                            className={touched.email && errors.email ? 'has-error'
-                            : null}
-                        />
-                        <Error touched={touched.email} message={errors.email} />
-                    </div>
+                    <Row>
+                        <Col  sm={{ size: 'auto', offset: 1 }}>
+                        <div className='input-row'>
+                            <label htmlFor='email'>Email</label>
+                            <input
+                                type='email'
+                                name='email'
+                                id='email'
+                                placeholder='Enter your email'
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.email}
+                                className={touched.email && errors.email ? 'has-error'
+                                : null}
+                            />
+                            <Error touched={touched.email} message={errors.email} />
+                        </div>
+                        </Col>
+                    </Row>
 
                     <div className='input-row'>
                         <label htmlFor='password'>Password</label>
@@ -76,10 +82,14 @@ export default function Login() {
                     </div>
 
                     <div className='input-row'>
-                        <button type='submit' disabled={isSubmitting}>Submit</button>
+                        <Jumbotron>
+                        <Button color="primary" type='submit' disabled={isSubmitting}>Submit</Button>{' '}
+                        </Jumbotron>
                     </div>
 
                 </form>
+                
+                </Container>
             )}
         </Formik>
     )

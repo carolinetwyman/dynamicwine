@@ -1,11 +1,12 @@
 import React from 'react';
-import "./login.css";
+
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import Error from './Error';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Button, Container, Row, Col } from 'reactstrap';
 import Reactstrap from 'reactstrap';
+import "./login.css";
 
 
 const validationSchema = Yup.object().shape({
@@ -75,7 +76,7 @@ export default function Login() {
                                 'has-error' : null}
                         />
                         <Error touched={touched.password} message={errors.password} /></label>
-                        <Button className="button" color="primary" type='submit' disabled={isSubmitting}>Sign In</Button>{' '}
+                        <Button className="button"  type='submit' disabled={isSubmitting}>Sign In</Button>{' '}
                         </div>
                         {/* </Col> */}
                     </Row>

@@ -20,7 +20,7 @@ function frontPage() {
     <Jumbotron fluid className="main">
       <Row>
         <Col lg={8}>
-          <Jumbotron fluid className="components">
+          <Jumbotron fluid className="map">
             <Map/>
           </Jumbotron>
         </Col>

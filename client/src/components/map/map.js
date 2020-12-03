@@ -8,7 +8,10 @@ import {
     Marker,
   } from "react-google-maps";
 import Geocode from "react-geocode";
-// import REACT_APP_GOOGLE_MAPS_API_KEY from "../../.env.local";
+import REACT_APP_GOOGLE_MAPS_API_KEY from "../../.env";
+// require ('dotenv').config()
+
+const apiKey = 'https://maps.googleapis.com/maps/api/js?key=' + REACT_APP_GOOGLE_MAPS_API_KEY +'&v=3.exp&libraries=geometry,drawing,places';
 
 Geocode.setApiKey("AIzaSyDZpId9vU-4E_1JioDeZ1IV58nOK5ygtZE&v")
 
@@ -51,7 +54,7 @@ export default class Map extends React.Component {
 
         return(
            <MapWithAMarker
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZpId9vU-4E_1JioDeZ1IV58nOK5ygtZE&v=3.exp&libraries=geometry,drawing,places"
+                googleMapURL= 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDZpId9vU-4E_1JioDeZ1IV58nOK5ygtZE&v&v=3.exp&libraries=geometry,drawing,places'
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `500px`}} />}
                 mapElement={<div style={{ height: `100%` }} />}

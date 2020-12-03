@@ -2,7 +2,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-
+const routes = require("./src/routes");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 //Var User = require("../dynamicwine/client/src/models/users/userModel.js");
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/dynamicwine', { useNewUrlParser: true, useUnifiedTopology: true });
+  process.env.MONGODB_URI || 'mongodb://localhost/dynamicwine',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -52,10 +52,12 @@ mongoose.connect(
 
 // Link API Routes here
 
+app.use(routes);
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 app.listen(PORT, () => {
-  console.log("🚀  Server server now on port", PORT, "👻 React App on Port 3000");
+  console.log(`🚀  Server server now on port", ${PORT}!`, `👻 React App on Port ${PORT}!`);
 });

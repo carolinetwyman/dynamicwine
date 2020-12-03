@@ -28,7 +28,13 @@
 }
 
 .components {
-    /* background: rgba(255, 255, 255, 0); */
-    background-size: cover !important;
-    width:100% !important;
+    background: rgba(50.2, 0, 12.5, .9);
+    background-size: cover;
+    width:100%;
+    color: white;
+    padding: 0em;
+}
+
+.map {
+    padding: 0em;
 }

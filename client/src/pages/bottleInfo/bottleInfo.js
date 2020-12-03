@@ -19,24 +19,24 @@ function bottleInfo() {
       </Row>
       <Row>
         <Col lg={4}>
-          <Jumbotron fluid>
+          <Jumbotron fluid className="map">
             <Map/>
           </Jumbotron>
         </Col>
         <Col lg={4}>
           <Row>
-            <Jumbotron fluid>
+            <Jumbotron fluid className="components">
               <Filters/>
             </Jumbotron>
           </Row>
           <Row>
-            <Jumbotron fluid>
+            <Jumbotron fluid className="components">
               <List/>
             </Jumbotron>
           </Row>
         </Col>
         <Col lg={4}>
-          <Jumbotron fluid>
+          <Jumbotron fluid className="components">
             <Information/>
           </Jumbotron>
         </Col>

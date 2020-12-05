@@ -1,17 +1,28 @@
-// import logo from './logo.svg';
-import './App.css';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import frontPage from './pages/frontPage/frontPage.js';
-import bottleInfo from './pages/bottleInfo/bottleInfo.js';
-// import reactstrap from "reactstrap";
-// import bootstrap from "bootstrap";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Books from "./pages/Books";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
+import Nav from "./components/Nav";
 
 function App() {
   return (
-   <Router>
-     <Route path="/" component={frontPage} exact />
-     <Route path="/bottleInfo" component={bottleInfo} />
-   </Router>
+    <Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path={["/", "/books"]}>
+            <Books />
+          </Route>
+          <Route exact path="/books/:id">
+            <Detail />
+          </Route>
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

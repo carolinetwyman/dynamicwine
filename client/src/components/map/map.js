@@ -8,10 +8,10 @@ import {
     Marker,
   } from "react-google-maps";
 import Geocode from "react-geocode";
-import REACT_APP_GOOGLE_MAPS_API_KEY from "../../.env";
+//import REACT_APP_GOOGLE_MAPS_API_KEY from "../../../.env";
 // require ('dotenv').config()
 
-const apiKey = 'https://maps.googleapis.com/maps/api/js?key=' + REACT_APP_GOOGLE_MAPS_API_KEY +'&v=3.exp&libraries=geometry,drawing,places';
+//const apiKey = 'https://maps.googleapis.com/maps/api/js?key=' + process.env.REACT_APP_GOOGLE_MAPS_API_KEY +'&v=3.exp&libraries=geometry,drawing,places';
 
 Geocode.setApiKey("AIzaSyDZpId9vU-4E_1JioDeZ1IV58nOK5ygtZE&v")
 

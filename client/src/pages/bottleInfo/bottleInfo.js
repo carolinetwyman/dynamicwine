@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 // import axios from "axios";
 import Map from "../../components/map/map";
 import Login from '../../components/login/login';
@@ -6,7 +6,7 @@ import Filters from '../../components/filters/filters';
 import List from '../../components/list/list';
 import Information from '../../components/information/information';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Jumbotron, Container, Row, Col } from 'reactstrap';
+import { Jumbotron, Row, Col } from 'reactstrap';
 import "./bottleInfo.css";
 // import CategoryChoice from "../../components/wine-categories/category-choice";
 

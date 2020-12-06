@@ -3,6 +3,7 @@ import React from "react";
 // import axios from "axios";
 import Map from "../../components/map/map";
 import Login from '../../components/login/login';
+import Signup from "../../components/signup/signup"
 import Filters from '../../components/filters/filters';
 import List from '../../components/list/list';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,6 +17,7 @@ function frontPage() {
     <div className="body">
     <Row className="wine">
           <Login className='center'/>
+          <Signup className='center'/>
     </Row>
     <Jumbotron fluid className="main">
       <Row>

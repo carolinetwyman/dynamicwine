@@ -7,7 +7,7 @@ export default {
     return axios({
       method: "POST",
       data: userobject,
-      url: "/api/user/register",
+      url: "/api/user/signup",
     });
   },
 //user logs in with an account

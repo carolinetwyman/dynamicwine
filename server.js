@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8000;
 const routes = require('./routes')
 //should port be 3001...?
 //below...Route requires:
-const user = require('./routes/user');
+const user = require('./routes/api/users');
 
 
 //middleware

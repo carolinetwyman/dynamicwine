@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container, Row } from 'reactstrap';
 import "./signup.css";
 import axios from 'axios';

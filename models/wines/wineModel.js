@@ -73,3 +73,6 @@ details: {
 const Wine = mongoose.model("Wine", WineSchema);
 
 module.exports = Wine;
+
+
+//new Wine(wine_name, varietal, vintage, location)

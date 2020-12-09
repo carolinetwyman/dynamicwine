@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import '../../pages/FrontPage/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container, Row } from 'reactstrap';
 import "./login.css";
 

@@ -1,52 +1,81 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Map from "../../components/map/map";
 //import Login from '../../components/login/login';
 import Signup from "../../components/signup/signup"
 import Filters from '../../components/filters/filters';
 import List from '../../components/list/list';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Jumbotron, Row, Col } from 'reactstrap';
-import "./frontPage.css";
+import "./FrontPage.css";
+import { Link } from "react-router-dom";
+
+
 // import CategoryChoice from "../../components/wine-categories/category-choice";
 
+const styles = {
+  link : {
+    backgroundColor: 'blue',
+    height: '100px',
+    width: '300px',
+    color: 'white'
+  }
+}
 
-function frontPage() {
+const FrontPage =()=> {
+
+   const [wines , setWines] = useState([])
+
+   useEffect(()=> {
+    axios.get('/api/wines').then(response => setWines(response.data)).catch(err => console.log(err))
+   }, [])
+
+
+  
+
+const wineMap = wines.map((wine, index) => (
+  <Link key={index} style={styles.link} to={"/wines/" + wine._id}>
+    {wine.wine_name}
+  </Link>
+))
+
+ 
   return (
     <div className="body">
-    <Row className="wine">
-          {/* <Login className='center'/> */}
-          <Signup className='center'/>
-    </Row>
-    <Jumbotron fluid className="main">
-      <Row>
-        <Col lg={8}>
-          <Jumbotron fluid className="map">
-            <Map/>
-          </Jumbotron>
-        </Col>
-        <Col lg={4}>
-          <Row>
-            <Jumbotron fluid className="components">
-              <Filters/>
-            </Jumbotron>
-          </Row>
-          <Row>
-            <Jumbotron fluid className="components">
-              <List/>
-            </Jumbotron>
-          </Row>
-        </Col>
+      <Row className="wine">
+            {/* <Login className='center'/> */}
+            <Signup className='center'/>
       </Row>
+      <Jumbotron fluid className="main">
+        <Row>
+            <Col lg={8}>
+              <Jumbotron fluid className="map">
+                <Map/>
+              </Jumbotron>
+            </Col>
+            <Col lg={4}>
+                  <Row>
+                    <Jumbotron fluid className="components">
+                      <Filters/>
+                    </Jumbotron>
+                  </Row>
+                  <Row>
+                    <Jumbotron fluid className="components">
+                      <List>
+                        {wineMap}
+                      </List>
+                    </Jumbotron>
+                  </Row>
+            </Col>
+        </Row>
       </Jumbotron>
-      </div>
- 
+    </div>
   );
 }
 
 
-export default frontPage;
+export default FrontPage;
 
 
 //////////////// KEEP FOR JULIAN///////////////////////////////

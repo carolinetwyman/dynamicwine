@@ -67,15 +67,16 @@ export default function Map() {
               options={options}
             >
             {
-              wineList.map(wine => {
+              wineList.map((wine, i) => {
+                console.log(wine)
                return (
-                <Marker position={wine.coords}>
+                 //marker needs a key, maybe wine.id
+                <Marker key={i} position={wine.coords}>
                     <InfoWindow>
                       <div>{wine.name} {wine.vintage}</div>
                     </InfoWindow>
                   </Marker>
                )}
-           
          )}
             </GoogleMap>
           ));

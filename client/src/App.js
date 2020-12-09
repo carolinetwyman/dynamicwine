@@ -2,7 +2,7 @@
 import React from 'react';
 //import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import frontPage from './pages/frontPage/frontPage.js';
+import FrontPage from './pages/FrontPage';
 import bottleInfo from './pages/bottleInfo/bottleInfo.js';
 // import reactstrap from "reactstrap";
 
@@ -10,7 +10,7 @@ import bottleInfo from './pages/bottleInfo/bottleInfo.js';
 function App() {
   return (
    <Router>
-     <Route path="/" component={frontPage} exact />
+     <Route exact path="/" component={FrontPage} />
      <Route path="/bottleInfo" component={bottleInfo} />
    </Router>
   );

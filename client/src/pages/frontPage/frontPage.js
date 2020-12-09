@@ -1,8 +1,8 @@
 
 import React from "react";
-// import axios from "axios";
+import axios from "axios";
 import Map from "../../components/map/map";
-import Login from '../../components/login/login';
+//import Login from '../../components/login/login';
 import Signup from "../../components/signup/signup"
 import Filters from '../../components/filters/filters';
 import List from '../../components/list/list';
@@ -16,7 +16,7 @@ function frontPage() {
   return (
     <div className="body">
     <Row className="wine">
-          <Login className='center'/>
+          {/* <Login className='center'/> */}
           <Signup className='center'/>
     </Row>
     <Jumbotron fluid className="main">

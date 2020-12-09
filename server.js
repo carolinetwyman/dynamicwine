@@ -27,7 +27,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(cors());
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI || 'mongodb://localhost/winelist';
 mongoose
     .connect(uri)
     .then(
@@ -56,13 +56,13 @@ mongoose
             app.use(express.static(path.join(__dirname, 'client/build')));
             //
             app.get('*', (req, res) => {
-                res.sendfile(path.join((__dirname = 'client/build/index.html')));
+                res.sendFile(path.join((__dirname = 'client/build/index.html')));
             });
         }
         
         //build mode
         app.get('*', (req, res) => {
-            res.sendfile()
+            res.sendFile()
         })
 
         //app.post('/api/user', (req, res) ==> {
@@ -71,7 +71,7 @@ mongoose
 
         //starting server
         app.listen(PORT, () => {
-            console.log('app listening on PORT: ${PORT}');
+            console.log(`app listening on PORT: ${PORT}`);
         });
     },
     (err) => {

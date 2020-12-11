@@ -95,7 +95,8 @@ function Wines() {
                   <ListItem key={wine._id}>
                     <Link to={"/wines/" + wine._id}>
                       <strong>
-                        {wine.wine_name} hi caroline {wine.variety}
+                        {wine.wine_name} by {wine.full_name}
+                        {wine.wine_name} {wine.variety}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteWine(wine._id)} />

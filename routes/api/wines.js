@@ -1,15 +1,16 @@
-const express = require("express");
-const router = express.Router();
-const wineController = require("../../../dynamicwine/controllers/wineController");
+const router = require("express").Router();
+const winesController = require("../../controllers/winesController");
 
+// Matches with "/api/books"
 router.route("/")
-  .get(wineController.wineFindAll)
-  .post(wineController.wineCreate);
+  .get(winesController.findAll)
+  .post(winesController.create);
 
+// Matches with "/api/books/:id"
 router
   .route("/:id")
-  .get(wineController.wineFindById)
-  .put(wineController.wineUpdate)
-  .delete(wineController.wineRemove);
+  .get(winesController.findById)
+  .put(winesController.update)
+  .delete(winesController.remove);
 
 module.exports = router;

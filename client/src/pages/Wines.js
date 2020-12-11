@@ -92,10 +92,10 @@ function Wines() {
             {wines.length ? (
               <List>
                 {wines.map(wine => (
-                  <ListItem key={wines._id}>
-                    <Link to={"/wines/" + wines._id}>
+                  <ListItem key={wine._id}>
+                    <Link to={"/wines/" + wine._id}>
                       <strong>
-                        {wines.wine_name} by {wines.full_name}
+                        {wine.wine_name} by {wine.full_name}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteWine(wine._id)} />

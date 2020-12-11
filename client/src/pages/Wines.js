@@ -43,11 +43,11 @@ function Wines() {
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.wine_name && formObject.full_name) {
+    if (formObject.wine_name && formObject.variety) {
       API.saveWine({
-        title: formObject.wine_name,
-        author: formObject.full_name,
-        synopsis: formObject.synopsis
+        name: formObject.wine_name,
+        variety: formObject.full_name,
+        year: formObject.year
       })
         .then(res => loadWines())
         .catch(err => console.log(err));
@@ -74,8 +74,8 @@ function Wines() {
               />
               <TextArea
                 onChange={handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="year"
+                placeholder="year (Optional)"
               />
               <FormBtn
                 disabled={!(formObject.wine_name && formObject.variety)}
@@ -96,6 +96,7 @@ function Wines() {
                     <Link to={"/wines/" + wine._id}>
                       <strong>
                         {wine.wine_name} by {wine.full_name}
+                        {wine.wine_name} {wine.variety}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteWine(wine._id)} />

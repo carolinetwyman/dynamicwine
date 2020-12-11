@@ -1,131 +1,273 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// Empty the Users and insert the user below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
+  "mongodb://localhost/winelist"
 );
 
-const bookSeed = [
+const wineSeed = [
   {
-    title: "The Dead Zone",
-    author: "Stephen King",
-    synopsis:
-      "A number-one national best seller about a man who wakes up from a five-year coma able to see people's futures and the terrible fate awaiting mankind in The Dead Zone - a \"compulsive page-turner\" (The Atlanta Journal-Constitution). Johnny Smith awakens from a five-year coma after his car accident and discovers that he can see people's futures and pasts when he touches them. Many consider his talent a gift; Johnny feels cursed. His fiancée married another man during his coma, and people clamor for him to solve their problems. When Johnny has a disturbing vision after he shakes the hand of an ambitious and amoral politician, he must decide if he should take drastic action to change the future. The Dead Zone is a \"faultlessly paced...continuously engrossing\" (Los Angeles Times) novel of second sight.",
+    wine_name: "Menti",
+    year: "2018",
+    color: "White",
+    variety: ["Sparkling", "Old World"],
+    grape: "Garganega",
+    grape_detail: "Garganega",
+    full_name: "Roncaie sui lieviti",
+    country: "Italy",
+    region: "Veneto",
+    address: "UFFICI /HEADQUARTER, via Dr. Bruzzo, 24, 36053 Gambellara VI, Italy",
+    PPB: 44,
+    BTG: false,
+    PPG: "",
+    details: "Minerally nose, and yeasty. Light on the palate with notes of lemon serbet, pithy frapefruit, green apple, pear, and brioche. Slight salinity in finish",
     date: new Date(Date.now())
   },
   {
-    title: "Lord of the Flies",
-    author: "William Golding",
-    synopsis:
-      "The tale of a party of shipwrecked schoolboys, marooned on a coral island, who at first enjoy the freedom of the situation but soon divide into fearsome gangs which turn the paradise island into a nightmare of panic and death.",
+    wine_name: "Raventos I Blanc",
+    year: "2017",
+    color: "White",
+    variety: ["Sparkling", "Old World"],
+    grape: ["Macabeo", "Parellada", "Xarello"],
+    grape_detail: "Macabeo/Parellada/Xarello",
+    full_name: "Blanc de Blancs",
+    country: "Spain",
+    region: "Barcelona",
+    address: "Plaça del Roure, S/N, 08770 Sant Sadurní d'Anoia, Barcelona, Spain",
+    PPB: 44,
+    BTG: true,
+    PPG: 10,
+    details: "Raventos is one of our favorite estates in Catalonia. The families’ winemaking roots date back over 500 years and the exceptional quality of their wines further proves their passion. This biodynamic blend of 60% Macabeo, 20% Parellada, and 20% Xarel-lo is expansive and elegant, it spends a minimum of 15 months on the lees and shows a beautiful balance of minerality, white peach, floral overtones, and toasted brioche.",
     date: new Date(Date.now())
   },
   {
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    synopsis:
-      "The Catcher in the Rye is a 1951 novel by J. D. Salinger. A controversial novel originally published for adults, it has since become popular with adolescent readers for its themes of teenage angst and alienation. It has been translated into almost all of the world's major languages. Around 1 million copies are sold each year with total sales of more than 65 million books. The novel's protagonist Holden Caulfield has become an icon for teenage rebellion. The novel also deals with complex issues of innocence, identity, belonging, loss, and connection.",
+    wine_name: "Mirco Mariotti",
+    year: "NV",
+    color: "White",
+    variety: ["Sparkling", "Old World"],
+    grape: "Fortana",
+    grape_detail: "Fortana",
+    full_name: "Set e Mez",
+    country: "Italy",
+    region: "Dell'Emilia",
+    address: "Via Rosa Bardelli, 12, 44011 Argenta FE, Italy",
+    PPB: 48,
+    BTG: true,
+    PPG: 11,
+    details: "This Italian ancestrale methode sparkler comes from very old Fortana vines planted to sandy soils just west of the Adriatic Sea. Mirco ferments in concrete and secondary fermentation takes place in the bottle using fresh juice from the same vintage. The resulting wine is hazy, with expansive carbonation, and balanced aromas and flavors of tart red fruit, sandy minerals, sea salt, and grape skin. ",
     date: new Date(Date.now())
   },
   {
-    title: "The Punch Escrow",
-    author: "Tal M. Klein",
-    synopsis:
-      "It's the year 2147. Advancements in nanotechnology have enabled us to control aging. We’ve genetically engineered mosquitoes to feast on carbon fumes instead of blood, ending air pollution. And teleportation has become the ideal mode of transportation, offered exclusively by International Transport―the world’s most powerful corporation, in a world controlled by corporations. Joel Byram spends his days training artificial-intelligence engines to act more human and trying to salvage his deteriorating marriage. He’s pretty much an everyday twenty-second century guy with everyday problems―until he’s accidentally duplicated while teleporting. Now Joel must outsmart the shadowy organization that controls teleportation, outrun the religious sect out to destroy it, and find a way to get back to the woman he loves in a world that now has two of him.",
+    wine_name: "Ameztoi",
+    year: "2019",
+    color: "White",
+    variety: ["Still","Old World"],
+    grape: "Txakolina",
+    grape_detail: "Hondurribi Zuri Txakolina",
+    full_name: "Getariako",
+    country: "Spain",
+    region: "Basque Country",
+    address:  "Lugar Barrio Eitzaga, 10, 20808 Eitzaga, SS, Spain",
+    PPB: "44",
+    BTG: true,
+    PPG: 11,
+    details: "In the traditional style of txakolina from Getaria, this light and crisp wine is bottled with a little bit of residual carbon dioxide to give it its signature natural spritz.",
     date: new Date(Date.now())
   },
   {
-    title: "Harry Potter and the Sorcerer's Stone",
-    author: "J.K. Rowling",
-    synopsis:
-      "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were. But everything changes when Harry is summoned to attend an infamous school for wizards, and he begins to discover some clues about his illustrious birthright. From the surprising way he is greeted by a lovable giant, to the unique curriculum and colorful faculty at his unusual school, Harry finds himself drawn deep inside a mystical world he never knew existed and closer to his own noble destiny.",
+    wine_name: "Domaine Mercouri",
+    year: "2017",
+    color: "Red",
+    variety: ["Still","Old World"],
+    grape: ["Refosco", "Mavrodaphne"],
+    grape_detail: "Refosco/Mavrodaphne",
+    full_name: "Vin des Letinon",
+    country: "Greece",
+    region: "Peloponnesus",
+    address: "Korakochori 271 00, Greece",
+    PPB: 50,
+    BTG: true,
+    PPG: 13,
+    details: "From the western edge of the Peloponnesus, from a place surrounded by palm trees and pines and a salty sea breeze, comes this stately, Burgundian blend of Refosco and Mavrodaphne, delivering lean sour-cherry, black raspberry and tobacco, violets and rosemary, all held in the firm yet gentle grip of burnt cinnamon and cedar tannins. We're simply delighted we can pour this for you--the sexiest red you'll sip all year, we swear.",
     date: new Date(Date.now())
   },
   {
-    title: "Coraline",
-    author: "Neil Gaiman",
-    synopsis:
-      "When Coraline steps through a door to find another house strangely similar to her own (only better), things seem marvelous. But there's another mother there, and another father, and they want her to stay and be their little girl. They want to change her and never let her go. Coraline will have to fight with all her wit and courage if she is to save herself and return to her ordinary life.",
+    wine_name: "Weingut Schmitt",
+    year: "2019",
+    color: "White",
+    variety: ["Still","Old World"],
+    grape: ['Scheurebe',  'Pinot Blanc',  'Huxelrebe',  'Pinot Gris',  'Ortega'],
+    grape_detail: "Field Blend",
+    full_name: "Frei, Korper, Kultur",
+    country: "Germany",
+    region: "Rheinhessen",
+    PPB: 62,
+    BTG: true,
+    PPG: 11.5,
+    details: "Rheinhessen is quickly becoming one of the most exciting regions in Germany for younger wine growers experimenting with natural viticulture. Bianka and Daniel Schmitt are two of our favorites in the area and this wild field blend saw a three-week maceration lending this bottling a hazy color, bright aromatics, and a palate of orange zest, limestone, crisp acidity, and more…",
     date: new Date(Date.now())
   },
   {
-    title: "Code: The Hidden Language of Computer Hardware and Software",
-    author: "Charles Petzold",
-    synopsis:
-      "What do flashlights, the British invasion, black cats, and seesaws have to do with computers? In CODE, they show us the ingenious ways we manipulate language and invent new means of communicating with each other. And through CODE, we see how this ingenuity and our very human compulsion to communicate have driven the technological innovations of the past two centuries. Using everyday objects and familiar language systems such as Braille and Morse code, author Charles Petzold weaves an illuminating narrative for anyone who’s ever wondered about the secret inner life of computers and other smart machines. It’s a cleverly illustrated and eminently comprehensible story—and along the way, you’ll discover you’ve gained a real context for understanding today’s world of PCs, digital media, and the Internet. No matter what your level of technical savvy, CODE will charm you—and perhaps even awaken the technophile within.",
+    wine_name: "Clos de Tue-Boeuf",
+    year: "2019",
+    color: "White",
+    variety: ["Still","Old World"],
+    grape: ['Sauvignon Blanc'],
+    grape_detail: "",
+    full_name: "Vin Blanc",
+    country: "France",
+    region: "Vin de France",
+    address: "6 Route de Seur, 41120 Les Montils, France",
+    PPB: 48,
+    BTG: true,
+    PPG: 11,
+    details: "Our longtime friend Thierry Puzelat makes one of the wildest and most delicious expressions of Sauvignon Blanc around. Sourced from several organically farmed vineyards near his home in Cheverny, this bottling displays focused acidity and flavors of lean tropical fruit, citrus zest, clay, and more",
     date: new Date(Date.now())
   },
   {
-    title: "The Everything Store: Jeff Bezos and the Age of Amazon",
-    author: "Brad Stone",
-    synopsis:
-      "The definitive story of Amazon.com, one of the most successful companies in the world, and of its driven, brilliant founder, Jeff Bezos. Amazon.com started off delivering books through the mail. But its visionary founder, Jeff Bezos, wasn't content with being a bookseller. He wanted Amazon to become the everything store, offering limitless selection and seductive convenience at disruptively low prices. To do so, he developed a corporate culture of relentless ambition and secrecy that's never been cracked. Until now. Brad Stone enjoyed unprecedented access to current and former Amazon employees and Bezos family members, giving listeners the first in-depth, fly-on-the-wall account of life at Amazon. Compared to tech's other elite innovators - Jobs, Gates, Zuckerberg - Bezos is a private man. But he stands out for his restless pursuit of new markets, leading Amazon into risky new ventures like the Kindle and cloud computing, and transforming retail in the same way Henry Ford revolutionized manufacturing. The Everything Store will be the revealing, definitive biography of the company that placed one of the first and largest bets on the Internet and forever changed the way we shop and read.",
+    wine_name: "Domaine Taillandier",
+    year: "2019",
+    color: "Rose",
+    variety: ["Still","Old World"],
+    grape: ['Cinsault', 'Syrah', 'Carignan'],
+    grape_detail: "",
+    full_name: "Six Roses",
+    country: "France",
+    region: "Languedoc-Roussillon",
+    address: "Le Château de Varennes, 49170 Savennières, France",
+    PPB: 44,
+    BTG: true,
+    PPG: 10,
+    details: "Benjamin Taillandier naturally works 9.5 hectacres in Minervois and stylistically he prefers to bottle lighter, more approachable wines than the region is commonly known for. This focused rose is ideal late summer/early autumn drinking, the cinsault lends ample red fruit flavors while the Syrah and Carignan give the wine more depth, spice, and minerality",
     date: new Date(Date.now())
   },
   {
-    title: "Total Recall: My Unbelievably True Life Story",
-    author: "Arnold Schwarzenegger",
-    synopsis:
-      "In his signature larger-than-life style, Arnold Schwarzenegger’s Total Recall is a revealing self-portrait of his illustrious, controversial, and truly unique life. The greatest immigrant success story of our time. His story is unique, and uniquely entertaining, and he tells it brilliantly in these pages. He was born in a year of famine, in a small Austrian town, the son of an austere police chief. He dreamed of moving to America to become a bodybuilding champion and a movie star. By the age of twenty-one, he was living in Los Angeles and had been crowned Mr. Universe. Within five years, he had learned English and become the greatest bodybuilder in the world. Within ten years, he had earned his college degree and was a millionaire from his business enterprises in real estate, landscaping, and bodybuilding. He was also the winner of a Golden Globe Award for his debut as a dramatic actor in Stay Hungry. Within twenty years, he was the world’s biggest movie star, the husband of Maria Shriver, and an emerging Republican leader who was part of the Kennedy family. Thirty-six years after coming to America, the man once known by fellow body­builders as the Austrian Oak was elected governor of California, the seventh largest economy in the world. He led the state through a budget crisis, natural disasters, and political turmoil, working across party lines for a better environment, election reforms, and bipartisan solutions. With Maria Shriver, he raised four fantastic children. In the wake of a scandal he brought upon himself, he tried to keep his family together. Until now, he has never told the full story of his life, in his own voice. Here is Arnold, with total recall.",
+    wine_name: "Tiago Teles",
+    year: "2017",
+    color: "Red",
+    variety: ["Still","Old World"],
+    grape: ['Alfrocheiro'],
+    grape_detail: "",
+    full_name: "Riaz",
+    country: "Portugal",
+    region: "Vihno de Portugal",
+    address: "Bairrada, Portugal",
+    PPB: 50,
+    BTG: true,
+    PPG: 11.5,
+    details: "For nearly a decade, Tiago worked as a wine journalist and Portuguese wine advocate before starting his estate in 2012. He and his father naturally farm costal vineyards planted to some of Portugal’s lesser-known indigenous varietals and this blend of Alfrochiero and Bical is a perfect red for Chicago cooler months. Medium-bodied and edgy, the palate shows dried black fruit, soft spice, mountain herbs, and granite.",
     date: new Date(Date.now())
   },
   {
-    title: "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
-    author: "Ashlee Vance",
-    synopsis:
-      "In the spirit of Steve Jobs and Moneyball, Elon Musk is both an illuminating and authorized look at the extraordinary life of one of Silicon Valley's most exciting, unpredictable, and ambitious entrepreneurs - a real-life Tony Stark - and a fascinating exploration of the renewal of American invention and its new makers. Elon Musk spotlights the technology and vision of Elon Musk, the renowned entrepreneur and innovator behind SpaceX, Tesla, and SolarCity, who sold one of his Internet companies, PayPal, for $1.5 billion. Ashlee Vance captures the full spectacle and arc of the genius' life and work, from his tumultuous upbringing in South Africa and flight to the United States to his dramatic technical innovations and entrepreneurial pursuits. Vance uses Musk's story to explore one of the pressing questions of our age: Can the nation of inventors and creators who led the modern world for a century still compete in an age of fierce global competition? He argues that Musk - one of the most unusual and striking figures in American business history - is a contemporary, visionary amalgam of legendary inventors and industrialists, including Thomas Edison, Henry Ford, Howard Hughes,and Steve Jobs. More than any other entrepreneur today, Musk has dedicated his energies and his own vast fortune to inventing a future that is as rich and far reaching as the visionaries of the golden age of science-fiction fantasy.",
+    wine_name: "Bedrock Wine Co.",
+    year: "2018",
+    color: "Red",
+    variety: ["Still","New World"],
+    grape: ['Zinfandel'],
+    grape_detail: "Old Vine Zinfandel",
+    full_name: "Old Vine",
+    country: "USA",
+    region: "Sonoma",
+    address: "414 1st St E, Sonoma, CA 95476",
+    PPB: 50,
+    BTG: true,
+    PPG: 11.5,
+    details: "Morgan Twain-Peterson of Bedrock is widely regarded as one of the most talented young producers in the Cali. This Zinfandel led blend is from 3 Sonoma vineyards planted in 1888, 1896, and 1905. The average vine age here is just over 80 years, lending a bit more depth and mineral to this intriguing bottling. The wine is rich in texture and character showing a balanced palate of brambly fruit, bitter chocolate, mild spice, and silky tannin.",
     date: new Date(Date.now())
   },
   {
-    title: "Steve Jobs",
-    author: "Walter Isaacson",
-    synopsis:
-      "Based on more than 40 interviews with Jobs conducted over two years - as well as interviews with more than a hundred family members, friends, adversaries, competitors, and colleagues - Walter Isaacson has written a riveting story of the roller-coaster life and searingly intense personality of a creative entrepreneur whose passion for perfection and ferocious drive revolutionized six industries: personal computers, animated movies, music, phones, tablet computing, and digital publishing. At a time when America is seeking ways to sustain its innovative edge, and when societies around the world are trying to build digital-age economies, Jobs stands as the ultimate icon of inventiveness and applied imagination. He knew that the best way to create value in the 21st century was to connect creativity with technology. He built a company where leaps of the imagination were combined with remarkable feats of engineering. Although Jobs cooperated with this book, he asked for no control over what was written. He put nothing off-limits. He encouraged the people he knew to speak honestly. And Jobs speaks candidly, sometimes brutally so, about the people he worked with and competed against. His friends, foes,and colleagues provide an unvarnished view of the passions, perfectionism, obsessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted. Driven by demons, Jobs could drive those around him to fury and despair. But his personality and products were interrelated, just as Apple's hardware and software tended to be, as if part of an integrated system. His tale is instructive and cautionary, filled with lessons about innovation, character, leadership, and values.",
+    wine_name: "Stirm Wine Company",
+    year: "2019",
+    color: "White",
+    variety: ["Sparkling","New World"],
+    grape: ['Albarino'],
+    grape_detail: "",
+    full_name: "Los Chuchaquis",
+    country: "USA",
+    region: "Santa Ynez Valley",
+    address: "65 Rogge Ln, Watsonville, CA 95076",
+    PPB: 58,
+    BTG: false,
+    PPG: "",
+    details: "This is the first sparkling wine release from Ryan Stirm and it has all of the glou-glou PetNat freshness and high-toned Albariño fruit you’d hope for. Bottled without filtration or SO2, this wine is turbid, tart, and so refreshing it begs for another sip.",
     date: new Date(Date.now())
   },
   {
-    title: "Astrophysics for People in a Hurry",
-    author: "Neil deGrasse Tyson",
-    synopsis:
-      "What is the nature of space and time? How do we fit within the universe? How does the universe fit within us? There's no better guide through these mind-expanding questions than acclaimed astrophysicist and best-selling author Neil deGrasse Tyson. But today, few of us have time to contemplate the cosmos. So Tyson brings the universe down to Earth succinctly and clearly, with sparkling wit, in digestible chapters consumable anytime and anywhere in your busy day. While waiting for your morning coffee to brew, or while waiting for the bus, the train, or the plane to arrive, Astrophysics for People in a Hurry will reveal just what you need to be fluent and ready for the next cosmic headlines: from the big bang to black holes, from quarks to quantum mechanics, and from the search for planets to the search for life in the universe.",
+    wine_name: "Rippon",
+    year: "2016",
+    color: "White",
+    variety: ["Still","New World"],
+    grape: ['Riesling'],
+    grape_detail: "",
+    full_name: "Mature Vine Riesling",
+    country: "New Zealand",
+    region: "Central Otago",
+    address: "Wanaka 9305, New Zealand",
+    PPB: 65,
+    BTG: false,
+    PPG: "",
+    details: "Here’s another terrific bottling from our dear friend Nick Mills, his non-interventionalist style thoughtfully displays the uniqeness of his hillside vineyard perched above the picturesque Lake Wanaka. From 20-30 year old vines, this viscous Riesling shows bright acidity and layered flavors of kumquat, lemongrass, and a long mineral-driven finish balanced by a touch of sweetness.",
     date: new Date(Date.now())
   },
   {
-    title: "1984",
-    author: "George Orwell",
-    synopsis:
-      "Winston Smith toes the Party line, rewriting history to satisfy the demands of the Ministry of Truth. With each lie he writes, Winston grows to hate the Party that seeks power for its own sake and persecutes those who dare to commit thoughtcrimes. But as he starts to think for himself, Winston can’t escape the fact that Big Brother is always watching... A startling and haunting vision of the world, 1984 is so powerful that it is completely convincing from start to finish. No one can deny the influence of this novel, its hold on the imaginations of multiple generations of readers, or the resiliency of its admonitions—a legacy that seems only to grow with the passage of time.",
+    wine_name: "Frank Cornelissen",
+    year: "2019",
+    color: "Rose",
+    variety: ["Still","Old World"],
+    grape: ['Malvasia', 'Catarratto', 'Nerello Mascalese', 'Insolia'],
+    grape_detail: "",
+    full_name: "Susucaru",
+    country: "Italy",
+    region: "Mt. Etna",
+    address: "Italy, Provincia di Catania, Castiglione di Sicilia, Via Canonico Zumbo 1 Passopiaciaro",
+    PPB: 66,
+    BTG: false,
+    PPG: "",
+    details: "A harmonious blend of red and white varietals (Malvasia, Catarratto, Nerello Mascalese, & Insolia), this natural rose is both funky and fresh. The wine is medium bodied, pouring a deep scarlet, with lively acidity and flavors of raspberry lambic, volcanic minerals, creamy lees, and more…",
     date: new Date(Date.now())
   },
   {
-    title: "Frankenstein",
-    author: "Mary Shelley",
-    synopsis:
-      "Few creatures of horror have seized readers' imaginations and held them for so long as the anguished monster of Mary Shelley's Frankenstein. The story of Victor Frankenstein's terrible creation and the havoc it caused has enthralled generations of readers and inspired countless writers of horror and suspense. Considering the novel's enduring success, it is remarkable that it began merely as a whim of Lord Byron's. \"We will each write a story,\" Byron announced to his next-door neighbors, Mary Wollstonecraft Godwin and her lover Percy Bysshe Shelley. The friends were summering on the shores of Lake Geneva in Switzerland in 1816, Shelley still unknown as a poet and Byron writing the third canto of Childe Harold. When continued rains kept them confined indoors, all agreed to Byron's proposal. The illustrious poets failed to complete their ghost stories, but Mary Shelley rose supremely to the challenge. With Frankenstein, she succeeded admirably in the task she set for herself: to create a story that, in her own words, \"would speak to the mysterious fears of our nature and awaken thrilling horror -- one to make the reader dread to look round, to curdle the blood, and quicken the beatings of the heart.\"",
+    wine_name: "Eyrie Vinyards",
+    year: "2016",
+    color: "Red",
+    variety: ["Still","New World"],
+    grape: ['Pinot Noir'],
+    grape_detail: "",
+    full_name: "Trousseau",
+    country: "USA",
+    region: "Willamette Valley",
+    address: "Wilamette Valley, Oregon",
+    PPB: 75,
+    BTG: false,
+    PPG: "",
+    details: "Jimi Brooks - Russian lit fanatic, biodynamicist, talented chef, and francophile – was a great friend of ours; his sudden passing at the age of 38 in 2004 left us feeling like a light was dimmed in the wine world.  It has since been resumed by friends in the Willamette Valley – his wines are now being made, under his name, as he would have wished, by his friend Chris Williams.  Pure and spicy and full of bright fruit, they express the best of what Oregon can show.",
     date: new Date(Date.now())
   },
   {
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    synopsis:
-      "The authentic edition from Fitzgerald's original publisher. This edition approved by the Holden-Crowther Literary Organisation. The Great Gatsby, F. Scott Fitzgerald's third book, stands as the supreme achievement of his career. This exemplary novel of the Jazz Age has been acclaimed by generations of readers. The story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, of lavish parties on Long Island at a time when The New York Times noted \"gin was the national drink and sex the national obsession,\" it is an exquisitely crafted tale of America in the 1920s. The Great Gatsby is one of the great classics of twentieth-century literature.",
-    date: new Date(Date.now())
-  },
-  {
-    title: "Born a Crime: Stories from a South African Childhood",
-    author: "Trevor Noah",
-    synopsis:
-      "Trevor Noah, one of the comedy world's fastest-rising stars and host of The Daily Show, tells his wild coming-of-age story during the twilight of apartheid in South Africa and the tumultuous days of freedom that followed. In this Audible Studios production, Noah provides something deeper than traditional memoirists: powerfully funny observations about how farcical political and social systems play out in our lives. \"Nelson Mandela once said, 'If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart.' He was so right. When you make the effort to speak someone elses language, even if it's just basic phrases here and there, you are saying to them, 'I understand that you have a culture and identity that exists beyond me. I see you as a human being.'\" (Trevor Noah)\nAttuned to the power of language at a young age - as a means of acceptance and influence in a country divided, then subdivided, into groups at odds with one another - Noah's raw, personal journey becomes something extraordinary in audio: a true testament to the power of storytelling. With brutal honesty and piercing wit, he forgoes an ordinary reading and, instead, delivers something more intimate, sharing his story with the openness and candor of a close friend. His chameleon-like ability to mimic accents and dialects, to shift effortlessly between languages including English, Xhosa, and Zulu, and to embody characters throughout his childhood - his mother, his gran, his schoolmates, first crushes and infatuations - brings each memory to life in vivid detail. Hearing him directly, you're reminded of the gift inherent in telling one's story and having it heard; of connecting with another, and seeing them as a human being.\nThe stories Noah tells are by turns hilarious, bizarre, tender, dark, and poignant - subsisting on caterpillars during months of extreme poverty, making comically pitiful attempts at teenage romance in a color-obsessed world, thrown into jail as the hapless fall guy for a crime he didn't commit, thrown by his mother from a speeding car driven by murderous gangsters, and more.",
+    wine_name: "Pearl Morissette",
+    year: "2017",
+    color: "Red",
+    variety: ["Still","New World"],
+    grape: ['Cabernet Franc', 'Gamay','Pinot Noir'],
+    grape_detail: "",
+    full_name: "Metis Rouge",
+    country: "Canada",
+    region: "Niagra Peninsula",
+    address: "3953 Jordan Rd, Jordan Station, ON L0R 1S0, Canada",
+    PPB: 66,
+    BTG: false,
+    PPG: "",
+    details: "Francois Morissette makes some of our favorite Cabernet Franc bottlings in North America. In 2017 he blended in a touch of Gamay and Pinot Noir and we couldn’t be more delighted with how this wine turned out. The aromatic profile brings Chinon to mind and the palate is focused and bright showing black cherry, potting clay, dried herbs, and a touch of funk.",
     date: new Date(Date.now())
   }
 ];
 
-db.Book
+db.Wine
   .remove({})
-  .then(() => db.Book.collection.insertMany(bookSeed))
+  .then(() => db.Wine.collection.insertMany(wineSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

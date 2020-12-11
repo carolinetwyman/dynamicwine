@@ -9,6 +9,7 @@ import "./frontPage.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
+import { Input } from "../../components/Form"
 
 
 export default function FrontPage() {
@@ -38,6 +39,7 @@ export default function FrontPage() {
     <div className="body">
       <Row className="header componenets">
         <h2>Silly Wine</h2>
+        <br />
         <Filters className="components" />
       </Row>
       <Jumbotron fluid className="main">
@@ -66,6 +68,18 @@ export default function FrontPage() {
                 <h3>No Results to Display</h3>
               )}
             </Jumbotron>
+            <form>
+              <Input
+                onChange={handleInputChange}
+                name="title"
+                placeholder="Title (required)"
+              />
+              <Input
+                onChange={handleInputChange}
+                name="author"
+                placeholder="Author (required)"
+              />
+            </form>
           </Col>
         </Row>
       </Jumbotron>

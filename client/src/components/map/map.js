@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./map.css";
 import {
   InfoWindow,
@@ -25,40 +25,7 @@ export default function Map() {
   Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
   Geocode.setLanguage("en");
 
-  const wineList = [
-    {
-      name: "Menti",
-      vintage: 2018,
-      address:
-        "UFFICI /HEADQUARTER, via Dr. Bruzzo, 24, 36053 Gambellara VI, Italy",
-      // coords: {lat: 45.4598, lng: 11.3401}
-    },
-    {
-      name: "Raventos i Blanc",
-      vintage: 2017,
-      address:
-        "Plaça del Roure, S/N, 08770 Sant Sadurní d'Anoia, Barcelona, Spain",
-      // coords: { lat: 41.4263208, lng: 1.7845831 }
-    },
-    {
-      name: "Mirco Mariotti",
-      vintage: "NV",
-      address: "Via Rosa Bardelli, 12, 44011 Argenta FE, Italy",
-      // coords: { lat: 44.6596655, lng: 11.7785897 }
-    },
-    {
-      name: "Txakoli Ameztoi",
-      vintage: 2019,
-      address: "Lugar Barrio Eitzaga, 10, 20808 Eitzaga, SS, Spain",
-      // coords: { lat: 43.2938, lng: -2.1983 }
-    },
-    {
-      name: "Domaine Mercouri",
-      vintage: 2017,
-      address: "Korakochori 271 00, Greece",
-      // coords: { lat: 37.75, lng: 21.58333 }
-    },
-  ];
+  const wineList = []
 
   wineList.map((wine) => {
     Geocode.fromAddress(wine.address).then(
@@ -101,8 +68,13 @@ export default function Map() {
     <MapWithAMarker
       googleMapURL={apiKey}
       loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `500px` }} />}
+      containerElement={<div style={{ height: `545px` }} />}
       mapElement={<div style={{ height: `100%` }} />}
     />
   );
 }
+
+
+
+
+// For Reference/////////////////

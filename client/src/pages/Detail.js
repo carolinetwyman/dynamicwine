@@ -9,9 +9,9 @@ function Detail(props) {
 
   // When this component mounts, grab the book with the _id of props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  const {id} = useParams()
+  const {_id} = useParams()
   useEffect(() => {
-    API.getWine(id)
+    API.getWine(_id)
       .then(res => setWine(res.data))
       .catch(err => console.log(err));
   }, [])
@@ -30,7 +30,7 @@ function Detail(props) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Synopsis</h1>
+              <h1>Year</h1>
               <p>
                 {wine.variety}
               </p>

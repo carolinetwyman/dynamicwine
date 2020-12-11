@@ -37,7 +37,7 @@ export default function FrontPage() {
   return (
     <div className="body">
       <Row className="header componenets">
-        <h2>Dynamic Wine</h2>
+        <h2>Silly Wine</h2>
         <Filters className="components" />
       </Row>
       <Jumbotron fluid className="main">

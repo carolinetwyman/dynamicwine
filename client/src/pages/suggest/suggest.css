@@ -1,5 +1,5 @@
 .header {
-  color: #222;
+  color: white;
   margin: 0.5em;
 }
 
@@ -10,6 +10,13 @@
 .screen {
   width: 100% !important;
   height: 100% !important;
+}
+
+.body {
+  background-image: url(../frontPage/wine-cellar.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0.5em;
 }
 
 .main {

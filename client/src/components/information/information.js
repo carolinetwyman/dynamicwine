@@ -1,6 +1,7 @@
 import React, { useState, Link, Children } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Container } from 'reactstrap';
 
+
 const Info = (wine) => {
   // const {
   //   className

@@ -1,26 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import "./filters.css";
 
-// function Filters(wines) {
-//    const [wineList, setWineList] = useState ([
-//        wines
-//    ]);
-
-//     return (
-//       <div>
-//         {wines.filter(wine => wines.wineList.color === "Red").map(filteredWine => (
-//           <li>
-//             {filteredWine.wine_name}
-//           </li>
-//         ))}
-//       </div>
-//     );
-//   }
-  
-//   export default Filters;
 
 export default function Filters(){
-    return(
-        <h1>lets get some filters</h1>
-    )
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+    return (
+        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+          <DropdownToggle caret>
+            Dropdown
+            </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>White</DropdownItem>
+            <DropdownItem>Rose</DropdownItem>
+            <DropdownItem>Red</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      );
+    
 }

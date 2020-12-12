@@ -31,7 +31,7 @@ export default function Map(wines) {
 
   useEffect(() => {
     setWineList(wines);
-    wines.wineList.map((wine) => {
+    wines.wineList.map((wine, i) => {
       // console.log(wineList);
       // console.log(wine);
       Geocode.fromAddress(wine.address).then(

@@ -13,24 +13,10 @@ import { Input, FormBtn } from "../../components/Form";
 import Info from "../../components/information/information";
 
 export default function FrontPage() {
-  const [wineList, setWineList] = useState([
-    {
-      name: "Menti",
-      vintage: 2018,
-      address:
-        "UFFICI /HEADQUARTER, via Dr. Bruzzo, 24, 36053 Gambellara VI, Italy",
-    },
-    {
-      name: "Raventos i Blanc",
-      vintage: 2017,
-      address:
-        "Plaça del Roure, S/N, 08770 Sant Sadurní d'Anoia, Barcelona, Spain",
-      // coords: { lat: 41.4263208, lng: 1.7845831 }
-    },
-  ]);
 
   const [wines, setWines] = useState([]);
   const [formObject, setFormObject] = useState({});
+  const [fullWineList, setFullWinesList] = useState([]);
 
   // Load all books and store them with setBooks
   useEffect(() => {
@@ -40,7 +26,9 @@ export default function FrontPage() {
   // Loads all books and sets them to books
   function loadWines() {
     API.getWines()
-      .then((res) => setWines(res.data))
+      .then((res) => {setWines(res.data)
+      setFullWinesList(res.data)
+      })
       .catch((err) => console.log(err));
   }
 
@@ -70,7 +58,7 @@ export default function FrontPage() {
       <Row className="header componenets">
         <h2>Silly Wine</h2>
         <br />
-        <Filters wines={wines} className="components" />
+        {wines.length > 0 && <Filters fullWineList={fullWineList} setWines={setWines} wines={wines} className="components" />}
       </Row>
       <Jumbotron fluid className="main">
         <Row>

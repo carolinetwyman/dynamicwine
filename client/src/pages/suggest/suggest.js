@@ -5,7 +5,7 @@ import Filters from "../../components/filters/filters";
 // import List from "../../components/list/list";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Jumbotron, Row, Col } from "reactstrap";
-import "./frontPage.css";
+import "./suggest.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";

@@ -9,7 +9,7 @@ import "./frontPage.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
-import { Input } from "../../components/Form";
+import { Input, FormBtn } from "../../components/Form";
 import Info from "../../components/information/information";
 
 export default function FrontPage() {
@@ -49,6 +49,22 @@ export default function FrontPage() {
     setFormObject({ ...formObject, [name]: value });
   }
 
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.wine_name && formObject.year) {
+      API.saveWine({
+        wine_name: formObject.wine_name,
+        year: formObject.year,
+      })
+        .then(() => setFormObject({
+          wine_name: "",
+          year: "",
+        }))
+        .then(() => loadWines())
+        .catch(err => console.log(err));
+    }
+  };
+
   return (
     <div className="body">
       <Row className="header componenets">
@@ -86,14 +102,22 @@ export default function FrontPage() {
             <form>
               <Input
                 onChange={handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                name="wine_name"
+                placeholder="WineName"
+                value={formObject.wine_name}
               />
               <Input
                 onChange={handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="year"
+                placeholder="Year"
+                value={formObject.year}
               />
+              <FormBtn
+                disabled={!(formObject.wine_name && formObject.year)}
+                onClick={handleFormSubmit}
+              >
+                Enter A Wine
+              </FormBtn>
             </form>
           </Col>
         </Row>

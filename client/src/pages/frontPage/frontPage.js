@@ -13,6 +13,19 @@ import { List, ListItem } from "../../components/List";
 
 export default function FrontPage() {
 
+  const [wineList, setWineList] = useState ([
+  {
+    name: "Menti",
+    vintage: 2018,
+    address: "UFFICI /HEADQUARTER, via Dr. Bruzzo, 24, 36053 Gambellara VI, Italy"
+  
+  },
+  {
+        name: "Raventos i Blanc",
+        vintage: 2017,
+        address: "Plaça del Roure, S/N, 08770 Sant Sadurní d'Anoia, Barcelona, Spain",
+        // coords: { lat: 41.4263208, lng: 1.7845831 }
+  }])
 
   const [wines, setWines] = useState([]);
   const [formObject, setFormObject] = useState({});
@@ -44,7 +57,7 @@ export default function FrontPage() {
         <Row>
           <Col lg={8}>
             <Jumbotron fluid className="map">
-              <Map />
+              <Map wineList={wines}/>
             </Jumbotron>
           </Col>
           <Col lg={4}>
@@ -52,9 +65,10 @@ export default function FrontPage() {
               {wines.length ? (
                 <List>
                   {wines.map((wine) => (
-                    <ListItem key={wine._id}>
+                    <ListItem key={wine._id}
+                    wine={wine}>
                       <Link to={"/wines/" + wine._id}>
-                        <strong>
+                        <strong wine={wine}>
                           {wine.wine_name} by {wine.full_name}
                           {wine.wine_name} {wine.variety}
                         </strong>

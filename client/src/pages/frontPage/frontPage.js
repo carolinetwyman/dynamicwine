@@ -55,11 +55,11 @@ export default function FrontPage() {
         .catch((err) => console.log(err));
     }
   }
-
+  
   return (
     <div className="body">
       <Row className="header componenets">
-    
+      <Col lg={8}></Col>
           {wines.length > 0 && (
             <Filters
               fullWineList={fullWineList}

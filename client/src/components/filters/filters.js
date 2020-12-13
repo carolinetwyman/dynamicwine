@@ -4,12 +4,17 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  FormGroup,
+  Label,
+  Input,
+  Button
 } from "reactstrap";
 import "./filters.css";
 
 export default function Filters({ setWines, fullWineList }) {
   const [color, setColor] = useState("Color");
   const [country, setCountry] = useState("Country");
+ 
 
   const handleClick = (event) => {
     const color = event.target.id;
@@ -33,6 +38,13 @@ export default function Filters({ setWines, fullWineList }) {
     setCountry(event.target.id);
   };
 
+  const handleReset = () => {
+   
+      return fullWineList;
+  }
+
+ 
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [dropdownOpenCountry, setDropdownOpenCountry] = useState(false);
 
@@ -45,7 +57,12 @@ export default function Filters({ setWines, fullWineList }) {
 
   return (
     <>
-      <Dropdown isOpen={dropdownOpen} toggle={toggle} onChange={handleChange}>
+      <Dropdown
+        isOpen={dropdownOpen}
+        toggle={toggle}
+        onChange={handleChange}
+        inline
+      >
         <DropdownToggle className="button" caret>
           {color}
         </DropdownToggle>
@@ -59,6 +76,7 @@ export default function Filters({ setWines, fullWineList }) {
           <DropdownItem id="Red" onClick={handleClick}>
             Red
           </DropdownItem>
+
         </DropdownMenu>
       </Dropdown>
 
@@ -66,6 +84,7 @@ export default function Filters({ setWines, fullWineList }) {
         isOpen={dropdownOpenCountry}
         toggle={toggleCountry}
         onChange={handleChangeCountry}
+        inline
       >
         <DropdownToggle className="button" caret>
           {country}
@@ -99,7 +118,10 @@ export default function Filters({ setWines, fullWineList }) {
             USA
           </DropdownItem>
         </DropdownMenu>
+       
       </Dropdown>
+      
+      <Button inline className="reset" onClick={handleReset}>Reset</Button>
     </>
   );
 }

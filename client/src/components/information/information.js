@@ -1,5 +1,6 @@
 import React, { useState, Link, Children } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Container } from 'reactstrap';
+import "./information.css"
 
 
 const Info = (wine) => {
@@ -15,11 +16,15 @@ const Info = (wine) => {
       <Button onClick={toggle}></Button>
       <Modal isOpen={modal} toggle={toggle} className="wine">
         <ModalHeader toggle={toggle}>
-        <h3>{wine.wine.wine_name} "{wine.wine.full_name}"</h3>
-        <h5>{wine.wine.year} {wine.wine.region} {wine.wine.country} {wine.wine.PPG} | {wine.wine.PPB}</h5>
+        <h2><strong className="strong">{wine.wine.wine_name}</strong> "{wine.wine.full_name}"</h2>
+        <h4>{wine.wine.year} {wine.wine.region}, {wine.wine.country} <strong className="strong"> {wine.wine.PPG} | {wine.wine.PPB}</strong></h4>
         </ModalHeader>
         <ModalBody>
-          {wine.wine.details}
+          <strong className="strong">Style: </strong>{wine.wine.carbonation} {wine.wine.color}
+          <br/>
+          <strong className="strong">Varietal: </strong>{wine.wine.grape_detail}
+          <br/>
+          <strong className="strong">Notes: </strong>{wine.wine.details}
         </ModalBody>
       </Modal>
     </div>

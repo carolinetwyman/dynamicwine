@@ -31,7 +31,7 @@ export default function Map(wines) {
 
   useEffect(() => {
     setWineList(wines);
-    wines.wineList.map((wine, i) => {
+    wines.wineList.map((wine) => {
       // console.log(wineList);
       // console.log(wine);
       Geocode.fromAddress(wine.address).then(
@@ -52,7 +52,7 @@ export default function Map(wines) {
   // console.log(wineList);
 
   //console.log(wineList);
-
+  
   const MapWithAMarker = withScriptjs(
     withGoogleMap((props) => (
       <GoogleMap
@@ -64,7 +64,7 @@ export default function Map(wines) {
         {wines.wineList.map((wine) => {
           return (
             <Marker position={wine.coords} key={wine._id}>
-              <InfoWindow>
+              <InfoWindow defaultVisible={false}>
                 <div>
                   {wine.wine_name} {wine.year}
                 </div>

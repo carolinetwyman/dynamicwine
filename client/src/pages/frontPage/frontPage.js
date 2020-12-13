@@ -5,15 +5,15 @@ import Filters from "../../components/filters/filters";
 // import List from "../../components/list/list";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Jumbotron, Row, Col } from "reactstrap";
-import "./frontPage.css";
+
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
 import Info from "../../components/information/information";
+import "./frontPage.css";
 
 export default function FrontPage() {
-
   const [wines, setWines] = useState([]);
   const [formObject, setFormObject] = useState({});
   const [fullWineList, setFullWinesList] = useState([]);
@@ -26,8 +26,9 @@ export default function FrontPage() {
   // Loads all books and sets them to books
   function loadWines() {
     API.getWines()
-      .then((res) => {setWines(res.data)
-      setFullWinesList(res.data)
+      .then((res) => {
+        setWines(res.data);
+        setFullWinesList(res.data);
       })
       .catch((err) => console.log(err));
   }
@@ -44,21 +45,30 @@ export default function FrontPage() {
         wine_name: formObject.wine_name,
         year: formObject.year,
       })
-        .then(() => setFormObject({
-          wine_name: "",
-          year: "",
-        }))
+        .then(() =>
+          setFormObject({
+            wine_name: "",
+            year: "",
+          })
+        )
         .then(() => loadWines())
-        .catch(err => console.log(err));
+        .catch((err) => console.log(err));
     }
-  };
+  }
 
   return (
     <div className="body">
       <Row className="header componenets">
-        <h2>Silly Wine</h2>
-        <br />
-        {wines.length > 0 && <Filters fullWineList={fullWineList} setWines={setWines} wines={wines} className="components" />}
+    
+          {wines.length > 0 && (
+            <Filters
+              fullWineList={fullWineList}
+              setWines={setWines}
+              wines={wines}
+              className="filters"
+            />
+          )}
+       
       </Row>
       <Jumbotron fluid className="main">
         <Row>

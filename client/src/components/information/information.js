@@ -3,16 +3,10 @@ import { Button, Modal, ModalHeader, ModalBody, Container } from 'reactstrap';
 
 
 const Info = (wine) => {
-  // const {
-  //   className
-  // } = props;
+
 
   const [modal, setModal] = useState(false);
-  const [wineState, setWineState] = useState (
-   {wine}
-  )
-  console.log(wine);
-  console.log(wineState);
+  const [wineState, setWineState] = useState (wine)
 
   const toggle = () => setModal(!modal);
 

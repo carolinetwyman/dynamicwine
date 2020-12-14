@@ -263,7 +263,76 @@ const wineSeed = [
     PPG: "",
     details: "Francois Morissette makes some of our favorite Cabernet Franc bottlings in North America. In 2017 he blended in a touch of Gamay and Pinot Noir and we couldn’t be more delighted with how this wine turned out. The aromatic profile brings Chinon to mind and the palate is focused and bright showing black cherry, potting clay, dried herbs, and a touch of funk.",
     date: new Date(Date.now())
+  },
+  {
+    wine_name: "Domaine Tempier",
+    year: "2018",
+    color: "Rose",
+    carbonation: "Still",
+    grape: "Rose Blend",
+    grape_detail: 'Mourvede, Grenache, Cinsault',
+    full_name: null,
+    country: "France",
+    region: "Bandol",
+    address: "1082 Chemin des Fanges, 83330 Le Castellet, France",
+    PPB: 75,
+    size: "Bottle",
+    PPG: "",
+    details: "Tempier is a perennial favorite, producing one of the most sought-after southern French rosés every vintage. The legendary Peyraud family has been instrumental in the protection and expression of Bandol’s exceptional terroir. Their organic salmon-colored Mouvédre led blend shows the best of the south with great minerality and flavors of candied blood orange, Provencal herbs, lemon zest and shimmering acidity.",
+    date: new Date(Date.now())
+  },
+  {
+    wine_name: "Beurer",
+    year: "2014",
+    color: "White",
+    carbonation: "Still",
+    grape: "Riesling",
+    grape_detail: 'Riesling',
+    full_name: "Kieselsandstein",
+    country: "Germany",
+    region: "Swabia",
+    address: "Lange Str. 67, 71394 Kernen im Remstal, Germany",
+    PPB: 55,
+    size: "Bottle",
+    PPG: "",
+    details: "Jochen Beurer is a friend and favorite amongst the southern German producers we’ve met, his Rieslings show the same youth and agility he once did as a European BMX champion. This Kieselsandstein is drinking great right, showing ample weight, generous acidity, and flavors of lemongrass, cardamom, clementine, and a mineral driven finish.",
+    date: new Date(Date.now())
+  },
+  {
+    wine_name: "Spy Valley",
+    year: "2018",
+    color: "White",
+    carbonation: "Still",
+    grape: "Sauvignon Blanc",
+    grape_detail: 'Sauvignon Blanc',
+    full_name: null,
+    country: "New Zealand",
+    region: "Marlborough",
+    address: "37 Lake Timara Road West, RD 6, Blenheim 7276, New Zealand",
+    PPB: 44,
+    size: "Bottle",
+    PPG: "",
+    details: "For all you Kiwi Sauv Blanc lovers out there this wine was not made to disappoint. It’s grassy, with plenty of ruby red grapefruit, and gooseberry that makes it undoubtedly from Marlborough…",
+    date: new Date(Date.now())
+  },
+  {
+    wine_name: "Mahi",
+    year: "2016",
+    color: "Red",
+    carbonation: "Still",
+    grape: "Pinot Noir",
+    grape_detail: 'Pinot Noir',
+    full_name: null,
+    country: "New Zealand",
+    region: "Marlborough",
+    address: "9 Terrace Road, Renwick, Blenheim 7204, New Zealand",
+    PPB: 48,
+    size: "Bottle",
+    PPG: "",
+    details: "Brian Bicknell and his wife Nicola started Mahi in 2001. Like so many of our favorite vignerons, they rely heavily on nature and the character of their vineyards to bring authenticity to the wines. This ‘09 is the best Pinot we’ve tried of theirs, it’s new world muscle and old world charm makes it a wonderful example of what New Zealand has to offer, showing great length on the palate with flavors of black cherry, pink peppercorn, rosemary, anise, and more…",
+    date: new Date(Date.now())
   }
+
 ];
 
 db.Wine

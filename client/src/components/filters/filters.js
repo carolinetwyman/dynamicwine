@@ -19,23 +19,25 @@ export default function Filters({ setWines, fullWineList }) {
 
   const handleClick = (event) => {
     const color = event.target.id;
+    console.log("colorclicked",fullWineList);
     setWines(() => {
-      var filteredWines = fullWineList.filter((wine) => {
+      var filteredWinesColor = fullWineList.filter((wine) => {
         return wine.color === color;
       });
-      return filteredWines;
+      return filteredWinesColor;
     });
     setColor(event.target.id);
   };
 
   const handleClickAll = (event) => {
+    console.log("colorall",fullWineList);
     setWines(() => {
-      var filteredWines = fullWineList.filter((wine) => {
+      var filteredWinesColorAll = fullWineList.filter((wine) => {
         return ([wine.color === "White"],
             [wine.color === "Rose"],
             [wine.color === "Red"]);
       });
-      return filteredWines;
+      return filteredWinesColorAll;
     });
     setColor(event.target.id);
   };
@@ -53,10 +55,10 @@ export default function Filters({ setWines, fullWineList }) {
 
   const handleClickCountryAll = (event) => {
     setWines(() => {
-      var filteredWinesCountry = fullWineList.filter((wine) => {
+      var filteredWinesCountryAll = fullWineList.filter((wine) => {
         return ([wine.country === "Canada"], [wine.country === "France"], [wine.country === "Germany"], [wine.country === "Greece"], [wine.country === "Italy"], [wine.country === "New Zealand"], [wine.country === "Portugal"], [wine.country === "Spain"], [wine.country === "USA"]);
       });
-      return filteredWinesCountry;
+      return filteredWinesCountryAll;
     });
     setCountry(event.target.id);
   };
@@ -75,14 +77,15 @@ export default function Filters({ setWines, fullWineList }) {
 
   const handleClickGlassAll = (event) => {
     setWines(() => {
-      var filteredWinesSize = fullWineList.filter((wine) => {
+      var filteredWinesSizeAll = fullWineList.filter((wine) => {
         return ([wine.size === "Glass"],
             [wine.size === "Bottle"]);
       });
-      return filteredWinesSize;
+      return filteredWinesSizeAll;
     });
     setGlass(event.target.id);
   };
+
 
 
 
@@ -104,7 +107,7 @@ export default function Filters({ setWines, fullWineList }) {
         isOpen={dropdownOpen}
         toggle={toggle}
         onChange={handleChange}
-        inline
+        inline="true"
       >
         <DropdownToggle className="button" caret>
           {color}
@@ -130,7 +133,7 @@ export default function Filters({ setWines, fullWineList }) {
         isOpen={dropdownOpenCountry}
         toggle={toggleCountry}
         onChange={handleChangeCountry}
-        inline
+        inline="true"
       >
         <DropdownToggle className="button" caret>
           {country}
@@ -173,7 +176,7 @@ export default function Filters({ setWines, fullWineList }) {
         isOpen={dropdownOpenSize}
         toggle={toggleSize}
         onChange={handleChange}
-        inline
+        inline="true"
       >
         <DropdownToggle className="button" caret>
           {glass}

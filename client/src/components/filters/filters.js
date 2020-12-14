@@ -104,7 +104,7 @@ export default function Filters({ setWines, fullWineList }) {
         isOpen={dropdownOpen}
         toggle={toggle}
         onChange={handleChange}
-        inline
+        inline="true"
       >
         <DropdownToggle className="button" caret>
           {color}
@@ -130,7 +130,7 @@ export default function Filters({ setWines, fullWineList }) {
         isOpen={dropdownOpenCountry}
         toggle={toggleCountry}
         onChange={handleChangeCountry}
-        inline
+        inline="true"
       >
         <DropdownToggle className="button" caret>
           {country}
@@ -173,7 +173,7 @@ export default function Filters({ setWines, fullWineList }) {
         isOpen={dropdownOpenSize}
         toggle={toggleSize}
         onChange={handleChange}
-        inline
+        inline="true"
       >
         <DropdownToggle className="button" caret>
           {glass}

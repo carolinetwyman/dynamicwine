@@ -65,7 +65,7 @@ export default function Filters({ setWines, fullWineList }) {
   const handleClickGlass = (event) => {
     const glass = event.target.id;
     setWines(() => {
-      var filteredWinesSize = country.filter((wine) => {
+      var filteredWinesSize = fullWineList.filter((wine) => {
         return wine.size === glass;
       });
       return filteredWinesSize;
@@ -75,7 +75,7 @@ export default function Filters({ setWines, fullWineList }) {
 
   const handleClickGlassAll = (event) => {
     setWines(() => {
-      var filteredWinesSize = country.filter((wine) => {
+      var filteredWinesSize = fullWineList.filter((wine) => {
         return ([wine.size === "Glass"],
             [wine.size === "Bottle"]);
       });

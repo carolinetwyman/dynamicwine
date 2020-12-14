@@ -78,6 +78,14 @@ export default function FrontPage() {
             </Jumbotron>
           </Col>
           <Col lg={4}>
+              {wines.length > 0 && (
+                  <Filters
+                    fullWineList={fullWineList}
+                    setWines={setWines}
+                    wines={wines}
+                    className="filters"
+                  />
+                )}
             <Jumbotron fluid className="components">
               {wines.length ? (
                 <List>

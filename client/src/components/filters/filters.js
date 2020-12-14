@@ -14,6 +14,7 @@ import "./filters.css";
 export default function Filters({ setWines, fullWineList }) {
   const [color, setColor] = useState("Color");
   const [country, setCountry] = useState("Country");
+  const [glass, setGlass] = useState("Size")
  
 
   const handleClick = (event) => {
@@ -21,6 +22,18 @@ export default function Filters({ setWines, fullWineList }) {
     setWines(() => {
       var filteredWines = fullWineList.filter((wine) => {
         return wine.color === color;
+      });
+      return filteredWines;
+    });
+    setColor(event.target.id);
+  };
+
+  const handleClickAll = (event) => {
+    setWines(() => {
+      var filteredWines = fullWineList.filter((wine) => {
+        return ([wine.color === "White"],
+            [wine.color === "Rose"],
+            [wine.color === "Red"]);
       });
       return filteredWines;
     });
@@ -38,18 +51,48 @@ export default function Filters({ setWines, fullWineList }) {
     setCountry(event.target.id);
   };
 
-  const handleReset = () => {
-   
-      return fullWineList;
-  }
+  const handleClickCountryAll = (event) => {
+    setWines(() => {
+      var filteredWinesCountry = fullWineList.filter((wine) => {
+        return ([wine.country === "Canada"], [wine.country === "France"], [wine.country === "Germany"], [wine.country === "Greece"], [wine.country === "Italy"], [wine.country === "New Zealand"], [wine.country === "Portugal"], [wine.country === "Spain"], [wine.country === "USA"]);
+      });
+      return filteredWinesCountry;
+    });
+    setCountry(event.target.id);
+  };
 
- 
+
+  const handleClickGlass = (event) => {
+    const glass = event.target.id;
+    setWines(() => {
+      var filteredWinesSize = country.filter((wine) => {
+        return wine.size === glass;
+      });
+      return filteredWinesSize;
+    });
+    setGlass(event.target.id);
+  };
+
+  const handleClickGlassAll = (event) => {
+    setWines(() => {
+      var filteredWinesSize = country.filter((wine) => {
+        return ([wine.size === "Glass"],
+            [wine.size === "Bottle"]);
+      });
+      return filteredWinesSize;
+    });
+    setGlass(event.target.id);
+  };
+
+
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [dropdownOpenCountry, setDropdownOpenCountry] = useState(false);
+  const [dropdownOpenSize, setDropdownOpenSize] = useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const toggleCountry = () => setDropdownOpenCountry((prevState) => !prevState);
+  const toggleSize = () => setDropdownOpenSize((prevState) => !prevState);
 
   const handleChange = (e) => console.log("e.target.val", e.target.value);
   const handleChangeCountry = (e) =>
@@ -75,6 +118,9 @@ export default function Filters({ setWines, fullWineList }) {
           </DropdownItem>
           <DropdownItem id="Red" onClick={handleClick}>
             Red
+          </DropdownItem>
+          <DropdownItem id="All Colors" onClick={handleClickAll}>
+            All
           </DropdownItem>
 
         </DropdownMenu>
@@ -115,13 +161,35 @@ export default function Filters({ setWines, fullWineList }) {
             Spain
           </DropdownItem>
           <DropdownItem id="USA" onClick={handleClickCountry}>
-            USA
+            U.S.A.
+          </DropdownItem>
+          <DropdownItem id="All Countries" onClick={handleClickCountryAll}>
+            All
           </DropdownItem>
         </DropdownMenu>
-       
       </Dropdown>
-      
-      <Button inline className="reset" onClick={handleReset}>Reset</Button>
+
+      <Dropdown
+        isOpen={dropdownOpenSize}
+        toggle={toggleSize}
+        onChange={handleChange}
+        inline
+      >
+        <DropdownToggle className="button" caret>
+          {glass}
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem id="Glass" onClick={handleClickGlass}>
+            Glass
+          </DropdownItem>
+          <DropdownItem id="Bottle" onClick={handleClickGlass}>
+            Bottle
+          </DropdownItem>
+          <DropdownItem id="All Sizes" onClick={handleClickGlassAll}>
+            Both
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </>
   );
 }

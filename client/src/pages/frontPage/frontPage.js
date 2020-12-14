@@ -13,6 +13,7 @@ import { Input, FormBtn } from "../../components/Form";
 import Info from "../../components/information/information";
 import "./frontPage.css";
 
+
 export default function FrontPage() {
   const [wines, setWines] = useState([]);
   const [formObject, setFormObject] = useState({});
@@ -68,7 +69,6 @@ export default function FrontPage() {
               className="filters"
             />
           )}
-       
       </Row>
       <Jumbotron fluid className="main">
         <Row>
@@ -78,14 +78,6 @@ export default function FrontPage() {
             </Jumbotron>
           </Col>
           <Col lg={4}>
-              {wines.length > 0 && (
-                  <Filters
-                    fullWineList={fullWineList}
-                    setWines={setWines}
-                    wines={wines}
-                    className="filters"
-                  />
-                )}
             <Jumbotron fluid className="components">
               {wines.length ? (
                 <List>
@@ -105,7 +97,7 @@ export default function FrontPage() {
                 <h3>No Results to Display</h3>
               )}
             </Jumbotron>
-            <form>
+            {/* <form>
               <Input
                 onChange={handleInputChange}
                 name="wine_name"
@@ -124,7 +116,7 @@ export default function FrontPage() {
               >
                 Enter A Wine
               </FormBtn>
-            </form>
+            </form> */}
           </Col>
         </Row>
       </Jumbotron>

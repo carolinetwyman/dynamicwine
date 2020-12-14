@@ -9,7 +9,8 @@ import {
 } from "react-google-maps";
 import Geocode from "react-geocode";
 import mapStyles from "./mapStyles";
-import { set } from "mongoose";
+import Delayed from './delayed';
+
 
 const options = {
   styles: mapStyles,
@@ -32,11 +33,8 @@ export default function Map(wines) {
   useEffect(() => {
     setWineList(wines);
     wines.wineList.map((wine) => {
-      // console.log(wineList);
-      // console.log(wine);
       Geocode.fromAddress(wine.address).then(
         (response) => {
-          // const { lat, lng } = response.results[0].geometry.location;
           wine.coords = response.results[0].geometry.location;
           return wine;
         },
@@ -77,12 +75,14 @@ export default function Map(wines) {
   );
 
   return (
+    <Delayed waitBeforeShow={700}>
     <MapWithAMarker
       googleMapURL={apiKey}
       loadingElement={<div style={{ height: `100%` }} />}
       containerElement={<div style={{ height: `545px` }} />}
       mapElement={<div style={{ height: `100%` }} />}
     />
+   </Delayed>
   );
 }
 

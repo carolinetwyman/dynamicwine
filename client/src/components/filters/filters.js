@@ -12,6 +12,14 @@ import {
 import "./filters.css";
 
 export default function Filters({ setWines, fullWineList }) {
+
+    // const [state, setState] = useState ({
+    //     color: "Color",
+    //     country: "Country",
+    //     size: "Size"
+    // })
+
+
   const [color, setColor] = useState("Color");
   const [country, setCountry] = useState("Country");
   const [glass, setGlass] = useState("Size")
@@ -28,6 +36,7 @@ export default function Filters({ setWines, fullWineList }) {
     });
     setColor(event.target.id);
   };
+
 
   const handleClickAll = (event) => {
     console.log("colorall",fullWineList);

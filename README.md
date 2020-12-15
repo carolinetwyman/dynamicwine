@@ -2,7 +2,6 @@
 
 # Dynamic Wine
 
-## Description(Describe by words and images alike)
 ![image of site](/images/screenshot.png)
 ### Welcome to Dynamic Wine, the app that allows restaurants to select the perfect bottles for their unique winelist. You can filter your establishment's wine list by color or country. Our interactive map shows you exactly where it came from, and handsome modals allow you to get to know your wines better before inviting them to your dinner party.
 

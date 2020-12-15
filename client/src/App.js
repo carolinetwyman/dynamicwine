@@ -11,25 +11,3 @@ export default function App() {
     </Router>
   );
 }
-
-// function App() {
-//   return (
-//     <Router>
-
-//         <Switch>
-//           <Route exact path={["/", "/wines"]}>
-//             <Wines />
-//           </Route>
-//           <Route exact path="/wines/:id">
-//             <Detail />
-//           </Route>
-//           <Route>
-//             <NoMatch />
-//           </Route>
-//         </Switch>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;

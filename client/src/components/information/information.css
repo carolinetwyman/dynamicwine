@@ -5,7 +5,7 @@
 .info { 
 
    font-size: medium;
-   border-radius: inherit;
+   /* border-radius: inherit; */
    border-color: white;
    margin-right: .3em;
    vertical-align: auto;

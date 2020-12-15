@@ -399,6 +399,40 @@ const wineSeed = [
     PPG: "",
     details: "Raspberry on the nose, a light red wine with hints of currant, raspberry and cherry. The wine gently touches your palate and explodes with great complexity on the finish.",
     date: new Date(Date.now())
+  },
+  {
+    wine_name: "Lucien ALbrecht",
+    year: "NV",
+    color: "White",
+    carbonation: "Sparkling",
+    grape: "Pinot Blanc",
+    grape_detail: 'Pinot Blanc',
+    full_name: "Cremant D'Alsace Brut",
+    country: "France",
+    region: "Alsace",
+    address: "28 Rue du Printemps, 68500 Orschwihr, France",
+    PPB: 45,
+    size: "Bottle",
+    PPG: "",
+    details: "Yellow pale color with nice brilliance and fine, delicate bubbles. An expressive nose of floral and fresh fruits (apple, peaches and apricots). Nice maturity and ripe fruit on the palate with crisp zesty lemon and bright acidity. Dominated by the Pinot Blanc varietal, this Crémant Brut shows freshness, structure and subtleness. Delicious at any time of the day and with many foods. This Crémant is a classic for every occasion.",
+    date: new Date(Date.now())
+  },
+  {
+    wine_name: "Krug",
+    year: "NV",
+    color: "White",
+    carbonation: "Sparkling",
+    grape: "Champagne Blend",
+    grape_detail: 'Pinot Noir, Chardonnay, Pinot Meunier',
+    full_name: "Grand Cuvee Brut",
+    country: "France",
+    region: "Champagne",
+    address: "5 Rue Coquebert, 51100 Reims, France",
+    PPB: 300,
+    size: "Bottle",
+    PPG: "",
+    details: "Krug Crande Cuvee is born from the dream of one man, Joseph Krug, to craft the very best Champagne he could offer, every single year, regardless of annual variations in climate. Since 1843, the House of Krug has honoured this vision with each new Edition of Krug Grande Cuvee: the most generous expression of Champagne. Aromas of flowers in bloom, ripe, dried and citrus fruits, as well as marzipan and gingerbread",
+    date: new Date(Date.now())
   }
 
 ];

@@ -1,15 +1,12 @@
 ![logo](/images/logo-10.png)
 
-# Dynamic Wine (A Title Image too if possible…Edit them on canva.com if you are not a graphic designer.)
+# Dynamic Wine
 
 ## Description(Describe by words and images alike)
 ![image of site](/images/screenshot.png)
 ### Welcome to Dynamic Wine, the app that allows restaurants to select the perfect bottles for their unique winelist. You can filter your establishment's wine list by color or country. Our interactive map shows you exactly where it came from, and handsome modals allow you to get to know your wines better before inviting them to your dinner party.
 
 ### ***Alcohol abuse is dangerous for health, consume with moderation***
-
-## Demo(Images, Video links, Live Demo links)
-
 
 ## Technologies Used
 ![javascript logo](/images/240px-JavaScript-logo.png)
@@ -18,7 +15,7 @@
 ![mongoDB logo](/images/200px-MongoDB_Logo.svg.png)
 ![nodejs logo](/images/200px-Node.js_logo.svg.png)
 
-## Problems we overcame
+## Memories made on this journey...
 ### Coding google maps, filters, CRUD operations, UI/UX, deploying to Heroku, mastering >100 Github commits, and  Passport.js authentication were each personal mountains. The group had to restart two separate times. On the bright side, each failure WAS accompanied by learning.
 
 ## Installation, Setup, and How to contribute.

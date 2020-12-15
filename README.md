@@ -7,6 +7,6 @@
 </div>
 <div>
 	<h3>
-	this website was built with the help of https://github.com/tbakerx/react-resume-template
+More Text Here?
 	</h3>
 </div>

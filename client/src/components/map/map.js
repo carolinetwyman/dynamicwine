@@ -5,7 +5,7 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
+  Marker
 } from "react-google-maps";
 import Geocode from "react-geocode";
 import mapStyles from "./mapStyles";
@@ -14,8 +14,10 @@ import Delayed from './delayed';
 
 const options = {
   styles: mapStyles,
-  disableDefaultUI: true,
+  disableDefaultUI: false,
   zoomControl: true,
+  // streetViewControl: true
+ 
 };
 
 const apiKey =
@@ -26,7 +28,7 @@ const apiKey =
 export default function Map(wines) {
   Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
   Geocode.setLanguage("en");
-  // console.log(props);
+
 
   const [wineList, setWineList] = useState([wines]);
 
@@ -44,25 +46,20 @@ export default function Map(wines) {
       );
     });
   }, [wines, wineList]);
-
-  //i think useEffect to set your state with props
-  // console.log(wines);
-  // console.log(wineList);
-
-  //console.log(wineList);
   
   const MapWithAMarker = withScriptjs(
     withGoogleMap((props) => (
       <GoogleMap
         className="map"
-        defaultZoom={1.4}
-        defaultCenter={{ lat: 0, lng: 0 }}
+        defaultZoom={2}
         options={options}
+        defaultCenter={{ lat: 0, lng: 0 }}
+        
       >
         {wines.wineList.map((wine) => {
           return (
             <Marker position={wine.coords} key={wine._id}>
-              <InfoWindow defaultVisible={false}>
+              <InfoWindow>
                 <div>
                   {wine.wine_name} {wine.year}
                 </div>
@@ -76,49 +73,14 @@ export default function Map(wines) {
 
   return (
     <Delayed waitBeforeShow={700}>
-    <MapWithAMarker
+   
+   <MapWithAMarker
       googleMapURL={apiKey}
       loadingElement={<div style={{ height: `100%` }} />}
       containerElement={<div style={{ height: `545px` }} />}
       mapElement={<div style={{ height: `100%` }} />}
     />
-   </Delayed>
+    
+  //  </Delayed>
   );
 }
-
-// For Reference/////////////////
-
-// const wineList = [
-//   {
-//     name: "Menti",
-//     vintage: 2018,
-//     address:
-//       "UFFICI /HEADQUARTER, via Dr. Bruzzo, 24, 36053 Gambellara VI, Italy",
-//     // coords: {lat: 45.4598, lng: 11.3401}
-//   },
-//   {
-//     name: "Raventos i Blanc",
-//     vintage: 2017,
-//     address:
-//       "Plaça del Roure, S/N, 08770 Sant Sadurní d'Anoia, Barcelona, Spain",
-//     // coords: { lat: 41.4263208, lng: 1.7845831 }
-//   },
-//   {
-//     name: "Mirco Mariotti",
-//     vintage: "NV",
-//     address: "Via Rosa Bardelli, 12, 44011 Argenta FE, Italy",
-//     // coords: { lat: 44.6596655, lng: 11.7785897 }
-//   },
-//   {
-//     name: "Txakoli Ameztoi",
-//     vintage: 2019,
-//     address: "Lugar Barrio Eitzaga, 10, 20808 Eitzaga, SS, Spain",
-//     // coords: { lat: 43.2938, lng: -2.1983 }
-//   },
-//   {
-//     name: "Domaine Mercouri",
-//     vintage: 2017,
-//     address: "Korakochori 271 00, Greece",
-//     // coords: { lat: 37.75, lng: 21.58333 }
-//   },
-// ];

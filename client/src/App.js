@@ -1,9 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Wines from "./pages/Wines";
-// import Detail from "./pages/Detail";
-// import NoMatch from "./pages/NoMatch";
-// import Nav from "./components/Nav";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import FrontPage from "./pages/frontPage/frontPage.js";
 import LogIn from "./pages/login/login.js"
 

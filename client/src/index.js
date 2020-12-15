@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-// import * as ServiceWorker from "../public/service-worker.js"
+import swDev from './swDev'
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
-// ServiceWorker.register();
+swDev();

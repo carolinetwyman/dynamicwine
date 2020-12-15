@@ -5,19 +5,16 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
 } from "react-google-maps";
 import Geocode from "react-geocode";
 import mapStyles from "./mapStyles";
-import Delayed from './delayed';
-
+import Delayed from "./delayed";
 
 const options = {
   styles: mapStyles,
   disableDefaultUI: false,
   zoomControl: true,
-  // streetViewControl: true
- 
 };
 
 const apiKey =
@@ -28,7 +25,6 @@ const apiKey =
 export default function Map(wines) {
   Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
   Geocode.setLanguage("en");
-
 
   const [wineList, setWineList] = useState([wines]);
 
@@ -46,15 +42,14 @@ export default function Map(wines) {
       );
     });
   }, [wines, wineList]);
-  
+
   const MapWithAMarker = withScriptjs(
     withGoogleMap((props) => (
       <GoogleMap
         className="map"
-        defaultZoom={2}
+        defaultZoom={1.5}
         options={options}
         defaultCenter={{ lat: 0, lng: 0 }}
-        
       >
         {wines.wineList.map((wine) => {
           return (
@@ -73,14 +68,12 @@ export default function Map(wines) {
 
   return (
     <Delayed waitBeforeShow={700}>
-   
-   <MapWithAMarker
-      googleMapURL={apiKey}
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `545px` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
-    
-  //  </Delayed>
+      <MapWithAMarker
+        googleMapURL={apiKey}
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `545px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
+    </Delayed>
   );
 }

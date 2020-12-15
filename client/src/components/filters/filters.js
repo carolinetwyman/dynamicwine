@@ -9,16 +9,9 @@ import "./filters.css";
 
 export default function Filters({ setWines, fullWineList, wines }) {
 
-    // const [state, setState] = useState ({
-    //     color: "Color",
-    //     country: "Country",
-    //     size: "Size"
-    // })
-
-
   const [color, setColor] = useState("Color");
   const [country, setCountry] = useState("Country");
-  const [glass, setGlass] = useState("Size")
+  const [glass, setGlass] = useState("Size");
  
 
   const handleClick = (event) => {
@@ -31,6 +24,8 @@ export default function Filters({ setWines, fullWineList, wines }) {
       return filteredWinesColor;
     });
     setColor(event.target.id);
+    setCountry("All Countries");
+    setGlass("All Sizes");
   };
 
 
@@ -45,6 +40,8 @@ export default function Filters({ setWines, fullWineList, wines }) {
       return filteredWinesColorAll;
     });
     setColor(event.target.id);
+    setCountry("All Countries");
+    setGlass("All Sizes");
   };
 
   const handleClickCountry = (event) => {
@@ -58,6 +55,8 @@ export default function Filters({ setWines, fullWineList, wines }) {
       return filteredWinesCountry;
     });
     setCountry(event.target.id);
+    setGlass("All Sizes");
+    setColor("All Colors");
   };
 
   const handleClickCountryAll = (event) => {
@@ -68,6 +67,8 @@ export default function Filters({ setWines, fullWineList, wines }) {
       return filteredWinesCountryAll;
     });
     setCountry(event.target.id);
+    setGlass("All Sizes");
+    setColor("All Colors");
   };
 
 
@@ -80,6 +81,8 @@ export default function Filters({ setWines, fullWineList, wines }) {
       return filteredWinesSize;
     });
     setGlass(event.target.id);
+    setColor("All Colors");
+    setCountry("All Countries");
   };
 
   const handleClickGlassAll = (event) => {
@@ -91,6 +94,8 @@ export default function Filters({ setWines, fullWineList, wines }) {
       return filteredWinesSizeAll;
     });
     setGlass(event.target.id);
+    setColor("All Colors");
+    setCountry("All Countries");
   };
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -164,6 +169,9 @@ export default function Filters({ setWines, fullWineList, wines }) {
           <DropdownItem id="Portugal" onClick={handleClickCountry}>
             Portugal
           </DropdownItem>
+          <DropdownItem id="South Africa" onClick={handleClickCountry}>
+            South Africa
+          </DropdownItem>
           <DropdownItem id="Spain" onClick={handleClickCountry}>
             Spain
           </DropdownItem>
@@ -193,7 +201,7 @@ export default function Filters({ setWines, fullWineList, wines }) {
             Bottle
           </DropdownItem>
           <DropdownItem id="All Sizes" onClick={handleClickGlassAll}>
-            Both
+            All
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>

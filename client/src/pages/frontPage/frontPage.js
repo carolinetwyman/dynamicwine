@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
-
 import Map from "../../components/map/map";
 import Filters from "../../components/filters/filters";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Jumbotron, Row, Col } from "reactstrap";
-
-
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
-// import { Input, FormBtn } from "../../components/Form";
 import Info from "../../components/information/information";
 import "./frontPage.css";
 
 
 export default function FrontPage() {
   const [wines, setWines] = useState([]);
-  const [formObject, setFormObject] = useState({});
   const [fullWineList, setFullWinesList] = useState([]);
 
   // Load all books and store them with setBooks
@@ -34,28 +28,28 @@ export default function FrontPage() {
       .catch((err) => console.log(err));
   }
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value });
-  }
+  // function handleInputChange(event) {
+  //   const { name, value } = event.target;
+  //   setFormObject({ ...formObject, [name]: value });
+  // }
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (formObject.wine_name && formObject.year) {
-      API.saveWine({
-        wine_name: formObject.wine_name,
-        year: formObject.year,
-      })
-        .then(() =>
-          setFormObject({
-            wine_name: "",
-            year: "",
-          })
-        )
-        .then(() => loadWines())
-        .catch((err) => console.log(err));
-    }
-  }
+  // function handleFormSubmit(event) {
+  //   event.preventDefault();
+  //   if (formObject.wine_name && formObject.year) {
+  //     API.saveWine({
+  //       wine_name: formObject.wine_name,
+  //       year: formObject.year,
+  //     })
+  //       .then(() =>
+  //         setFormObject({
+  //           wine_name: "",
+  //           year: "",
+  //         })
+  //       )
+  //       .then(() => loadWines())
+  //       .catch((err) => console.log(err));
+  //   }
+  // }
   
   return (
     <div className="body">
@@ -83,13 +77,19 @@ export default function FrontPage() {
                 <List>
                   {wines.map((wine) => (
                     <ListItem key={wine._id} wine={wine}>
-                      <Info wine={wine}> </Info>
+                    <Row>
+                      <Col lg={10}>
                       <strong wine={wine}>
                         {wine.wine_name} "{wine.full_name}"
                       </strong>
                       <div>
                         {wine.year} {wine.grape} {wine.PPG} | {wine.PPB}
                       </div>
+                      </Col>
+                      <Col lg={2}>
+                      <Info className="info" wine={wine}> </Info>
+                      </Col>
+                      </Row>
                     </ListItem>
                   ))}
                 </List>

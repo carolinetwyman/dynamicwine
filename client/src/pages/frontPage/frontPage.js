@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 import Map from "../../components/map/map";
 import Filters from "../../components/filters/filters";
-// import List from "../../components/list/list";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Jumbotron, Row, Col } from "reactstrap";
 
-import { Link } from "react-router-dom";
+
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
-import { Input, FormBtn } from "../../components/Form";
+// import { Input, FormBtn } from "../../components/Form";
 import Info from "../../components/information/information";
 import "./frontPage.css";
 
@@ -73,7 +73,7 @@ export default function FrontPage() {
       <Jumbotron fluid className="main">
         <Row>
           <Col lg={8}>
-            <Jumbotron fluid className="map">
+            <Jumbotron fluid className="map"> 
               <Map wineList={wines} />
             </Jumbotron>
           </Col>
@@ -88,7 +88,7 @@ export default function FrontPage() {
                         {wine.wine_name} "{wine.full_name}"
                       </strong>
                       <div>
-                        {wine.year} {wine.grape}
+                        {wine.year} {wine.grape} {wine.PPG} | {wine.PPB}
                       </div>
                     </ListItem>
                   ))}
@@ -97,26 +97,6 @@ export default function FrontPage() {
                 <h3>No Results to Display</h3>
               )}
             </Jumbotron>
-            {/* <form>
-              <Input
-                onChange={handleInputChange}
-                name="wine_name"
-                placeholder="WineName"
-                value={formObject.wine_name}
-              />
-              <Input
-                onChange={handleInputChange}
-                name="year"
-                placeholder="Year"
-                value={formObject.year}
-              />
-              <FormBtn
-                disabled={!(formObject.wine_name && formObject.year)}
-                onClick={handleFormSubmit}
-              >
-                Enter A Wine
-              </FormBtn>
-            </form> */}
           </Col>
         </Row>
       </Jumbotron>
@@ -124,42 +104,3 @@ export default function FrontPage() {
   );
 }
 
-//////////////// KEEP FOR JULIAN///////////////////////////////
-
-// class frontPage extends Component {
-//   state = {
-//     categories: null
-//   }
-
-//   getChoices = (e) => {
-//     e.preventDefault();
-//     const category = e.target.elements.wineCategory.value;
-//     axios.get(`https://quiniwine.com/api/pub/wineCategory/${category}/0/5?access_token=xbhysxe4p3gpeznr8kpn`)
-//     .then((res) => {
-//       const categories = res.data.items[0].Name + ", " + res.data.items[0].Winery + ", " + res.data.items[0].Country + ", " + res.data.items[0].id;
-//       this.setState({ categories });
-//       console.log(categories);
-//       console.log(res);
-//     })
-//   }
-
-//   render(){
-//     return (
-//       <div className="wine">
-//       <Row>
-//         <Col sm={{ size: 'auto', offset: 1 }}>
-//           <Login className='center'/>,
-//           <Map className='center'/>
-//         </Col>
-//         <Col sm={{ size: 'auto', offset: 1 }}>
-//           <CategoryChoice getChoices={this.getChoices} />
-//           { this.state.categories ? <p>Wine info based off your selection: {this.state.categories}</p> : <p>Please select a category</p>}
-//         </Col>
-//       </Row>
-
-//       </div>
-//     );
-//   }
-// };
-
-///////////////////////////////////////////////////////////////////

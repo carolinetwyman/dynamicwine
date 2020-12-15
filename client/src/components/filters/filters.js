@@ -4,14 +4,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  FormGroup,
-  Label,
-  Input,
-  Button
 } from "reactstrap";
 import "./filters.css";
 
-export default function Filters({ setWines, fullWineList }) {
+export default function Filters({ setWines, fullWineList, wines }) {
 
     // const [state, setState] = useState ({
     //     color: "Color",
@@ -52,7 +48,9 @@ export default function Filters({ setWines, fullWineList }) {
   };
 
   const handleClickCountry = (event) => {
+
     const country = event.target.id;
+   
     setWines(() => {
       var filteredWinesCountry = fullWineList.filter((wine) => {
         return wine.country === country;
@@ -94,9 +92,6 @@ export default function Filters({ setWines, fullWineList }) {
     });
     setGlass(event.target.id);
   };
-
-
-
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [dropdownOpenCountry, setDropdownOpenCountry] = useState(false);

@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import NoMatch from "./pages/NoMatch";
 // import Nav from "./components/Nav";
 import FrontPage from "./pages/frontPage/frontPage.js";
+import LogIn from "./pages/login/login.js"
 
 export default function App() {
   return (
     <Router>
       <Route path="/" component={FrontPage} exact />
+      <Route path="/login" component={LogIn} />
     </Router>
   );
 }

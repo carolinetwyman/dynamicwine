@@ -21,7 +21,7 @@ export default function LogIn() {
       <Label for="examplePassword">Password</Label>
       <Input type="password" name="password" id="examplePassword" placeholder="password" />
     </FormGroup>
-    <Button className="btn btn-warning float-right">Log In</Button>
+    <Button className="btn btn-warning float-right" href="/">Log In</Button>
     </Form>
     </Jumbotron>
     <Col lg={3}></Col>

@@ -19,6 +19,6 @@
 
 ## Installation, Setup, and How to contribute.
 ### From the command line, type "git clone https://github.com/carolinetwyman/dynamicwine.git". Then type "npm install," and "npm start."
-### To contirbute, make a pull request to a new branch with a descriptive request, and we will review!
+### To contribute, make a pull request to a new branch with a descriptive request, and we will review!
 
 ### To add wines, you have 3 options: 1) use our dummy list by typing "npm run seed." 2) Alternatively, you can manually enter a wine list into scripts/seedDB.js followed by "npm run seed." 3) Or enter them through the website, using the winefinder and clicking submit for each wine.

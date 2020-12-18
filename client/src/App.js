@@ -32,7 +32,7 @@ class App extends Component {
       .get('/api/user/')
       .then((response) => {
         console.log('Get user response: ');
-        console.log(response.data);
+        console.log(response.data.user);
         if (response.data.user) {
           console.log(
             'Get User: There is a user saved in the server session: '

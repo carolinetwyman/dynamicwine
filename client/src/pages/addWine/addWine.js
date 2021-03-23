@@ -52,7 +52,7 @@ export default function AddWine() {
         carbonation: formObject.carbonation,
         grape: formObject.grape,
         grape_detail: formObject.grape_detail,
-        full_name: formObject.year,
+        full_name: formObject.full_name,
         country: formObject.country,
         region: formObject.region,
         address: formObject.address,

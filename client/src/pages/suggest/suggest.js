@@ -5,14 +5,14 @@ import Filters from "../../components/filters/filters";
 // import List from "../../components/list/list";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Jumbotron, Row, Col } from "reactstrap";
-import "./frontPage.css";
+import "../frontPage/frontPage.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Input } from "../../components/Form";
 import Info from "../../components/information/information";
 
-export default function FrontPage() {
+export default function Suggest() {
   const [wineList, setWineList] = useState([
     {
       name: "Menti",

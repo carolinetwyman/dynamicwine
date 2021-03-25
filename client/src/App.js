@@ -5,6 +5,8 @@ import FrontPage from "./pages/frontPage/frontPage.js";
 //our LogIn is Thomas's LoginForm...
 import Signup from './components/sign-up';
 import LoginForm from './components/login-form';
+import Suggest from './pages/suggest/suggest'
+import AddWine from './pages/addWine/addWine'
 
 class App extends Component {
   constructor() {
@@ -57,14 +59,17 @@ class App extends Component {
     return (
       <div className='App'>
         {/* greet user if logged in: */}
-        {this.state.loggedIn && <p>Join the party, {this.state.username}!</p>}
+        {this.state.loggedIn && <p>Join the party {this.state.username}</p>}
         {/* Routes to different components */}
+        
         <Route path="/" component={FrontPage} exact />
         <Route
           path='/login'
           render={() => <LoginForm updateUser={this.updateUser} />}
         />
         <Route path='/signup' render={() => <Signup />} />
+        <Route path="/suggest" component={Suggest} />
+        <Route path="/addWine" component={AddWine} />
       </div>
     );
   }
